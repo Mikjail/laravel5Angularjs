@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "camburPinton.js",
+  "sources": [
+    "../app/dist/js/scroll.js",
+    "../app/dist/js/app.js",
+    "../app/dist/js/service.js",
+    "../app/dist/js/controller.js",
+    "../app/dist/js/directives.js",
+    "../app/dist/js/camburTemplates.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;;ACAA;;ACAA;;ACAA;;ACAA;;ACAA;AACA"
+}

@@ -1,0 +1,37 @@
+1)  tirar esto en config.ambiente.js
+module.exports = function () {
+	var local = 'C:/java/Sources/Development/';
+	var ambiente = {
+		path : local + "isban-tubi-client-angular/isban-tubi-client-angular-web/src/main/webapp/"
+	};
+	return ambiente;
+}
+
+
+
+
+
+2) configurar proxys
+
+- npm config set proxy http://proxy.ar.bsch:8080
+- git config --global http.proxy http://proxy.ar.bsch:8080
+- git clone https://github.com/centrodph/basicgulp.git 
+- webdriver-manager --proxy http://proxy.ar.bsch:8080 update
+
+
+3) Testing
+
+- http://andyshora.com/unit-testing-best-practices-angularjs.html
+- http://bendetat.com/karma-and-mocha-for-angular-testing.html
+- https://quickleft.com/blog/angularjs-unit-testing-for-real-though/
+- http://www.bradoncode.com/blog/2015/06/26/unit-testing-http-ngmock-fundamentals/
+- http://www.bradoncode.com/blog/2015/06/29/unit-testing-http-ngmock-fundamentals-2/
+- https://gist.github.com/bbraithwaite/9effa5a77638a49e045d
+
+
+4) install
+npm install -g gulp
+npm install -g bower
+npm install -g karma-cli
+
+WSI046689 marina 4g

@@ -1,0 +1,74 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+    <h3 class="modal-title">Datos</h3>
+</div>
+<div class="modal-body col-md-12">
+    <div class="col-md-12">
+        <form id="formPedido" data-toggle="validator" ng-submit="registrarForm();" role="form">
+            <div class="col-md-12">
+                <div class="col-md-12 form-group">
+                    <label for="inputName" class="control-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputName" pattern="([A-z-ñ\s]){1,}$" maxlength="20" placeholder="Nombre*" ng-model="nombreForm" required>
+                    <div class="help-block with-errors">A-z</div>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="inputLastName" class="control-label">Apellido</label>
+                    <input type="text" class="form-control" id="inputLastName" pattern="([A-z-ñ\s]){1,}$" maxlength="20" placeholder="Apellido*" ng-model="apellidoForm" required>
+                    <div class="help-block with-errors">A-z</div>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="inputEmail" class="control-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="mailForm" required>
+                    <div class="help-block with-errors">example@mail.com</div>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="inputPhone" class="control-label">Telefono</label>
+                    <input type="text" class="form-control" id="inputPhone" pattern="^[0-9]{1,}" maxlength="18" placeholder="telefono*" ng-model="telForm" required>
+                    <div class="help-block with-errors">(011)5555-5555</div>
+                </div>
+                <div class="col-md-8 form-group">
+                    <label for="inputCalle" class="control-label">Calle</label>
+                    <input type="text" class="form-control" id="inputCalle" pattern="([A-z-ñ\s]){1,}$" maxlength="30" placeholder="Calle*" ng-model="calle" required>
+                    <div class="help-block with-errors">A-z</div>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="inputAltura" class="control-label">Altura</label>
+                    <input type="text" class="form-control" id="inputAltura" pattern="^[0-9]{1,}" maxlength="12" placeholder="Altura*" ng-model="altura" required>
+                    <div class="help-block with-errors">0-99999</div>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="inputAltura" class="control-label">Piso</label>
+                    <input type="text" class="form-control" id="inputPiso" pattern="^[0-9]{1,}" maxlength="8" placeholder="Piso*" ng-model="piso">
+                    <div class="help-block with-errors">0-999</div>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="inputAltura" class="control-label">Depto</label>
+                    <input type="text" class="form-control" id="inputDepto" maxlength="8" placeholder="Depto*" ng-model="depto">
+                    <div class="help-block with-errors">0-9-A-z</div>
+                </div>
+                <div class="col-md-8 form-group">
+                    <label for="inputLocalidad">Localidad</label>
+                    <select class="form-control" id="inputLocalidad" placeholder="Localidad*" ng-model="localidad" required>
+                        <option value="" disabled selected>Localidad</option>
+                        <option>Belgrano</option>
+                        <option>Cañitas</option>
+                        <option>Colegiales</option>
+                        <option>Palermo</option>
+                        <option>Villa Crespo</option>
+                        </select>
+                    <div class="help-block with-errors">Belgrano - Cañitas - Nuñez - Colegiales - Palermo - Villa Crespo</div>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="comment" class="control-label">Comentario Adicional</label>
+                    <textarea class="form-control" rows="5" placeholder="Comentario*" ng-model="comment"></textarea>
+                    <div class="help-block with-errors">170 Max</div>
+                    <a href="#suPedido" class="btn btn-default" style="border:1px solid white;">volver</a>
+                    <button type="submit" class="btn btn-default" style="border:1px solid white;">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer col-md-12">
+    <button type="button" class="btn btn-default" style="border:1px solid white;" data-dismiss="modal">Cerrar</button>
+</div>

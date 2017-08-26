@@ -1,0 +1,74 @@
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        $("img.lazy").lazyload();
+        effect: "fadeIn"
+    });
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 imgArepas " ng-repeat="producto in productos.Slide3">
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-6 col-xs-6">
+                    <a href="javascript:void(0);" class="btn" ng-click="sumarCompraTequenos(producto.id)">
+                        <img class="clickBtn img-responsive lazy" src="img/icon/2.gif" data-original={{producto.btn}} alt=" ">
+                    </a>
+                    <!--<select name="singleSelect " ng-model="producto.cantidadTrigo " ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] "</select>-->
+                    <input class="hidden-xs" type="number" min="0" ng-model="producto.cantidad" name="cantidad" style="width: 30%; height: 35px; text-align: center; border-radius: 50%; color: white; background-color: black;" />
+                </div>
+                <div class="visible-xs col-xs-6">
+                    <input type="number" min="0" onKeyUp="if(this.value<0){this.value='0';}" ng-model="producto.cantidad" name="cantidad" style="width: 80%; text-align: center; color: white; background-color: black; border-color: black; border-bottom-color: white; margin-top:4%;"
+                    />
+                </div>
+            </div>
+
+
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <img src="img/icon/2.gif" data-original={{producto.img}} alt={{producto.nombre}} class="lazy img-responsive">
+            </div>
+
+        </div>
+        <div class=" col-md-6 col-sm-6 col-xs-12 imgArepas " ng-repeat="producto in productos.Slide1 ">
+            <div class="col-md-4 col-sm-12 col-xs-12 ">
+                <div class="col-md-12 col-sm-6 col-xs-3 " ng-if="producto.btnTrigo ">
+                    <a href="javascript:void(0); " class="btn " ng-click="sumarCompraTrigo(producto.id) ">
+                        <!--<a data-toggle="modal " data-target="#myModal " ng-click="verDetalle(producto.id); " class="btn cart col-md-2 ">-->
+                        <img class="clickBtn lazy" src="img/icon/2.gif" data-original={{producto.btnTrigo}} alt=" ">
+                    </a>
+                    <!--<select name="singleSelect " ng-model="producto.cantidadTrigo " ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] "></select>-->
+                    <input class="hidden-xs " type="number " min="0 " onKeyUp="if(this.value<0){this.value='0' ;} " ng-model="producto.cantidadTrigo " name="cantidad " style="width: 30%; height: 35px; text-align: center; border-radius: 50%; color: white;
+                    background-color: black; " />
+                </div>
+                <div class="col-xs-3 ">
+                    <input class="visible-xs " type="number " min="0 " onKeyUp="if(this.value<0){this.value='0' ;} " ng-model="producto.cantidadTrigo " name="cantidad " style="margin-left: 20%; width: 100%; height: 35px; text-align: center; color: white;
+                    border-color: black; border-bottom-color: white; background-color: black; " />
+                </div>
+                <div class="col-md-12 col-sm-6 col-xs-3 ">
+                    <a href="javascript:void(0); " class="btn " ng-click="sumarCompraMaiz(producto.id); ">
+                        <!--<a data-toggle="modal " data-target="#myModal " ng-click="verDetalle(producto.id); " class="btn cart col-md-2 ">-->
+                        <img class="clickBtn lazy" src="img/icon/2.gif" data-original={{producto.btnMaiz}} alt=" ">
+                    </a>
+                    <input class="hidden-xs " type="number " min="0 " onKeyUp="if(this.value<0){this.value='0' ;} " ng-model="producto.cantidadMaiz " name="cantidad " style="width: 30%; height: 35px; text-align: center; border-radius: 50%; color: white;
+                    background-color: black; " />
+                    <!--<select name="singleSelect " ng-model="producto.cantidadMaiz " ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] " </select>>-->
+                </div>
+                <div class="col-xs-3 ">
+                    <input class="visible-xs " type="number " min="0 " onKeyUp="if(this.value<0){this.value='0' ;} " ng-model="producto.cantidadMaiz " name="cantidad " style="margin-left: 20%; width: 100%; height: 35px; text-align: center; color: white;
+                    border-color: black; border-bottom-color: white; background-color: black; " />
+                </div>
+            </div>
+
+            <div class="col-md-8 col-sm-12 col-xs-12 ">
+                <!--<a href="javascript:void(0); " class="infoLogo btn ">
+                    <img class="clickBtn img-responsive " ng-src={{producto.infoLogo}} alt=" ">
+                </a>-->
+                <img src="img/icon/2.gif" data-original={{producto.img}} alt={{producto.nombre}} class="lazy img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <hr>
+        <a class="btn btn-default" href="#menu" data-toggle="modal" data-target="#myModalComprar"><span style="color: white; ">Pedir</span></a>
+    </div>
+
+</div>

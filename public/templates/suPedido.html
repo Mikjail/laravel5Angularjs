@@ -1,0 +1,107 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+    <h3 class="modal-title" id="myModalLabel">Su Pedido</h3>
+</div>
+<div class="modal-body">
+    <div id="menu">
+        <div>
+            <table class="table table-responsive table-hover table-condensed table-bordered " ng-if="totalCantidad() > 0">
+                <thead>
+                    <th class="text-center">Producto</th>
+                    <th class="text-center">Cantidad</th>
+                    <th class="text-center">Precio</th>
+                    <th class="text-center">Total</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="producto in suPedidoArepas()" ng-if="producto.cantidadTrigo > 0">
+                        <td>
+                            <img class="pull-left" src="img/icon/trigoMaiz/btnTrigoNegro.png" alt="IconoTrigo"> Arepa de {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.cantidadTrigo}}
+                        </td>
+                        <td>
+                            {{producto.precio}}
+                        </td>
+                        <td>
+                            {{producto.cantidadTrigo * producto.precio | currency}}$
+                        </td>
+                    </tr>
+                    <tr ng-repeat="producto in suPedidoArepas()" ng-if="producto.cantidadMaiz > 0">
+                        <td>
+                            <img class="pull-left" src="img/icon/trigoMaiz/btnMaizNegro.png" alt="IconoMaiz"> Arepa de {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.cantidadMaiz}}
+                        </td>
+                        <td>
+                            {{producto.precio}}
+                        </td>
+                        <td>
+                            {{producto.cantidadMaiz * producto.precio | currency}}$
+                        </td>
+                    </tr>
+                    <tr ng-repeat="producto in suPedidoTequenos()">
+                        <td>
+                            {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.cantidad}}
+                        </td>
+
+                        <td>
+                            {{producto.precio | currency}}
+                        </td>
+                        <td>
+                            {{producto.precio * producto.cantidad | currency}}
+                        </td>
+                    </tr>
+                    <tr ng-repeat="producto in suPedidoEmpanadas()">
+                        <td>
+                            {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.cantidad}}
+                        </td>
+
+                        <td>
+                            {{producto.precio | currency}}
+                        </td>
+                        <td>
+                            {{producto.precio * producto.cantidad | currency}}
+                        </td>
+                    </tr>
+                    <tr ng-repeat="producto in suPedidoSalsas()">
+                        <td>
+                            Salsa {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.cantidad}}
+                        </td>
+
+                        <td>
+                            {{producto.precio | currency}}
+                        </td>
+                        <td>
+                            {{producto.precio * producto.cantidad | currency}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div ng-if="totalCantidad()<=0">
+        <h1>Su compra esta vacía</h1>
+    </div>
+</div>
+
+<div class="modal-footer" ng-if="isOpen() == true">
+    <h1 class="text-center">{{totalCompra()| currency}} </h1>
+    <a href="#menu" class="btn btn-default pull-left" style="border:1px solid white;" ng-if="totalCompra() >= 0">Menu</a>
+    <a href="#enviar" class="btn btn-default" style="border:1px solid white;" ng-if="totalCompra() > 0">Continuar</a>
+</div>
+<div class="modal-footer" ng-if="isOpen() == false">
+    <h1 class="text-center">{{totalCompra()| currency}} </h1>
+    <a href="#menu" class="btn btn-default pull-left" style="border:1px solid white;" ng-if="totalCompra() >= 0">Menu</a>
+    <a href="#fueraHorario" class="btn btn-default" style="border:1px solid white;" ng-if="totalCompra() > 0">Continuar</a>
+</div>

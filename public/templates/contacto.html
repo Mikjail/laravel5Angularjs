@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>Contactanos</h2>
+    <div class="row">
+        <iframe class="col-md-4 col-sm-8 col-xs-8 visible-md visible-lg" src="https://www.youtube.com/embed/ij0dtkIaYRY" width="360" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <div class="contactForm col-md-8 col-sm-12">
+            <form ng-submit="registrarConsulta()" role="form ">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label for="inputName " class="control-label ">Nombre</label>
+                        <input type="text" class="form-control " ng-model='nombreForm' pattern="([A-z-ñ\s]){1,}$" maxlength="25 " placeholder="Nombre* " required>
+                        <div class="help-block with-errors ">A-z</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName " class="control-label ">Apellido</label>
+                        <input type="text " class="form-control " ng-model='apellidoForm' pattern="([A-z-ñ\s]){1,}$" maxlength="25 " placeholder="Apellido* " required>
+                        <div class="help-block with-errors ">A-z</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4  col-xs-12">
+                    <div class="form-group ">
+                        <label for="inputPhone " class="control-label ">Telefono</label>
+                        <input type="text " class="form-control " ng-model='telForm' pattern="^[0-9]{1,}" maxlength="18 " placeholder="telefono* " required>
+                        <div class="help-block with-errors ">(011) 5555-5555</div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="inputEmail " class="control-label ">Email</label>
+                        <input type="email " class="form-control " ng-model='mailForm' placeholder="Email " required>
+                        <div class="help-block with-errors ">example@mail.com</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4  col-xs-12">
+                    <div class="form-group ">
+                        <label for="comment " class="control-label ">Mensaje</label>
+                        <textarea class="form-control " rows="6 " ng-model='comment' placeholder="Comentario* "></textarea>
+                        <div class="help-block with-errors ">170 Max</div>
+                    </div>
+                </div>
+                <button type="submit " class="btn btn-default btn-lg col-md-2 col-sm-4 col-xs-4">Enviar</button>
+                <div class="col-md-10 fb-like" data-href="https://web.facebook.com/camburpintonBA" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-width="200" data-share="true"></div>
+            </form>
+        </div>
+        <div class="col-md-7 col-sm-12 col-xs-12">
+            <hr>
+            <br>
+            <ul class="list-inline banner-social-buttons ">
+                <li>
+                    <a href="https://www.facebook.com/camburpintonBA " target="_blank" class="btn btn-default btn-lg "><i class="fa fa-facebook fa-fw "></i> <span class="network-name ">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/camburpintonba " target="_blank" class="btn btn-default btn-lg "><i class="fa fa-instagram fa-fw "></i> <span class="network-name ">Instagram</span></a>
+                </li>
+                <li>
+                    <h3 class="btn btn-default btn-lg ">Telefono: 11 2004-5538</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
