@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 Route::get('/products/{id?}',['middleware' => 'cors', 
     'uses' => 'Products@index']);
 
+Route::get('/productsType/{id?}',['middleware' => 'cors', 
+    'uses' => 'ProductsType@index']);
+
 // Route::post('/products', 'Products@store');
 // Route::post('/products/{id}', 'Products@update');
 // Route::delete('/products/{id}', 'Products@destroy');

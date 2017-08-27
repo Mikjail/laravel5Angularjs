@@ -1,10 +1,10 @@
-productosCtrl.$inject = ['$scope', 'ProductosService', 'ProductsService', '$q'];
+productosCtrl.$inject = ['$scope', 'ProductosService', 'ProductsService', 'ProductsTypeService', '$q'];
 formCtrl.$inject = ['$scope', '$http', '$location']
 angular.module('starter')
     .controller("productosCtrl", productosCtrl)
     .controller("formCtrl", formCtrl);
 
-function productosCtrl($scope, ProductosService, ProductsService) {
+function productosCtrl($scope, ProductosService, ProductsService,ProductsTypeService) {
     $scope.productos = ProductosService;
     $scope.viewArepas = "";
     $scope.detalles;
@@ -15,8 +15,11 @@ function productosCtrl($scope, ProductosService, ProductsService) {
     };
     
     ProductsService.getProducts().then(({data})=>{
+        $scope.productsType = ProductsTypeService.getProductsType();
         $scope.products= data;
         console.log($scope.products);
+        console.log($scope.productsType);
+
     });
 
 
@@ -25,7 +28,7 @@ function productosCtrl($scope, ProductosService, ProductsService) {
         var day = date.getDay();
         var hour = date.getHours();
 
-        if (day >= 3 && day <= 6) {
+        if (day >= 2 && day <= 7) {
             if (hour >= 18 && hour <= 23) {
                 return true;
             }

@@ -1,20 +1,47 @@
 ProductosService.$inject = ['$http'];
 ProductsService.$inject = ['$http', 'API_URL','$q'];
+ProductsTypeService.$inject = ['$http', 'API_URL','$q'];
 angular.module('starter')
     .factory('ProductosService', ProductosService)
-    .service('ProductsService',ProductsService);
+    .service('ProductsService',ProductsService)
+    .service('ProductsTypeService',ProductsTypeService);
+
+    function ProductsTypeService($http, API_URL, $q){
+        
+        this.getProductsType = function(){ 
+            return [{
+               "id": "1",
+               "name" : "Arepas de Maiz"
+                },{
+               "id": "2",
+                "name": "Arepas de Trigo"},{
+                "id": "3",
+                "name": "Empanadas"},{
+                "id": "4",
+                "name": "Tequenos"},{
+                "id": "5",
+                "name":"Patacones"},
+                {
+                    "id": "6",
+                    "name":"Salsas"
+                }
+            ];
+        }
+       
+    }
 
 function ProductsService($http, API_URL, $q){
     var def= $q.defer();
     this.getProducts = function(){ 
+
     $http.get(API_URL + "products")
       .then(function(response) {
             def.resolve(response);
        
       });
       return def.promise;
-  }
-   
+    }
+       
 }
 
 
