@@ -24,7 +24,25 @@ app.config(['$routeProvider', function($routeProvider) {
         .when('/menuExtra', {
             templateUrl: 'templates/menuExtra.html'
         })
-        .when('/pedidoEncargo', {
-            templateUrl: 'templates/pedidoEncargo.html'
+        .when('/arepaMaiz', {
+            templateUrl: 'templates/arepaMaiz.html'
+        })
+        .when('/arepaTrigo', {
+            templateUrl: 'templates/arepaTrigo.html'
+        })
+        .when('/empanadas', {
+            templateUrl: 'templates/empanadas.html'
+        })
+        .when('/tequenos', {
+            templateUrl: 'templates/tequenos.html'
+        })
+        .when('/patacones', {
+            templateUrl: 'templates/patacones.html'
+        })
+        .when('/combos', {
+            templateUrl: 'templates/combos.html'
+        })
+        .when('/salsas', {
+            templateUrl: 'templates/salsas.html'
         })
 }]);

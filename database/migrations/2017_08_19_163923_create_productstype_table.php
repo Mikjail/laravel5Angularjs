@@ -13,18 +13,37 @@ class CreateProductstypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('productstype', function (Blueprint $table) {
+        Schema::create('product_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
 
-        DB::table('productstype')->insert([
+        DB::table('product_types')->insert([
             [
-                'name'=>'arepaMaiz'
+                'name'=>'arepaMaiz',
+                'description'=>  "Arepas de Maiz"
             ],
             [
-                'name'=>'arepaTrigo'
+                'name'=>'arepaTrigo',
+                'description'=>  "Arepas de Trigo"
+            ],
+            [
+                'name'=>'empanadas',
+                'description'=>  "Empanadas"
+            ],
+            [
+                'name'=>'tequenos',
+                'description'=>  "Tequenos"
+            ],
+            [
+                'name'=> "patacones",
+                'description'=>  "Patacones"
+            ],
+            [
+                'name'=>"salsas",
+                'description'=>  "Salsas"
             ]
         ]);
             
@@ -37,6 +56,6 @@ class CreateProductstypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productstype');
+        Schema::dropIfExists('product_types');
     }
 }

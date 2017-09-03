@@ -2,7 +2,7 @@
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
     <h2 class="modal-title" id="myModalLabel">Pedido</h2>
     <ng-container ng-repeat="type in productsType">
-        <a href="#{{type.id}}" style="border:1px solid white; color:white;" class="btn btn-default">{{type.name}}</a>
+        <a href="#menu" style="border:1px solid white; color:white;" ng-click="productTypeSelected(type)" class="btn btn-default">{{type.description}}</a>
     </ng-container>
     <!-- <a href="#menu" style="border:1px solid white; color:white;" class="btn btn-default">Menú</a>
     <a href="#menuExtra" style="border:1px solid white; color:white;" class="btn btn-default">Extras</a> -->
@@ -12,94 +12,26 @@
         <div class="table-responsive">
             <table class="table table-hover table-condensed">
                 <thead>
-                    <th colspan="2" class="text-center">Arepa Maiz<span ng-if="totalPedidoArepas() != 0">{{ totalPedidoArepas() | currency}} </span>
+                    <th class="text-center">{{pTypeSelected.description}}
+                    </th>
+                    <th class="text-center">{{totalByType(pTypeSelected)| currency}}
                     </th>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="product in products" ng-if="product.productstype_id == 1">
-                        <td>{{product.name}}</td>
-                        <td >
-                            <select name="singleSelect" ng-model="product.cant" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
+                    <tr ng-repeat="productSelected in products" ng-if="pTypeSelected.id ===  productSelected.productstype_id">
+                        <td>{{productSelected.name}}</td>
+                        <td>
+                            <select name="singleSelect" ng-model="productSelected.cant" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
                         </select>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div class="table-responsive">
-            <table class="table table-hover table-condensed table-bordered ">
-                <thead>
-                    <th class="text-center">Tequeño <span ng-if="totalPedidoTequenos() != 0">{{ totalPedidoTequenos() | currency}} </span>
-                    </th>
-                    <th class="text-center">
-                        Cantidad
-                    </th>
-                    <th class="text-center">
-                        Tipo
-                    </th>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="producto in productos.Slide3">
-                        <td>{{producto.nombre}}</td>
-                        <td>
-                            <select name="singleSelect" ng-model="producto.cantidad" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
-                        </select>
-                        </td>
-                        <td><select ng-model="producto.tipo">
-                        <option value="" selected>Frito</option>
-                        <option>Congelado</option>
-                        </select>
-                            </select>
-                        </td>
-
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-hover table-condensed table-bordered ">
-                <thead>
-                    <th class="text-center">Empanadas<span ng-if="totalPedidoEmpanadas() != 0">{{ totalPedidoEmpanadas() | currency}} </span>
-                    </th>
-                    <th class="text-center">
-                        Cantidad
-                    </th>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="producto in productos.Slide4">
-                        <td>{{producto.nombre}}</td>
-                        <td>
-                            <select name="singleSelect" ng-model="producto.cantidad" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
-                        </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!--<div class="table-responsive">
-            <table class="table table-hover table-condensed table-bordered ">
-                <thead>
-                    <th class="text-center">Empanadas<span ng-if="totalPedidoEmpanadas() != 0">{{ totalPedidoEmpanadas() | currency}} </span>
-                    </th>
-                    <th class="text-center">
-                        Cantidad
-                    </th>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="producto in productos.Slide4">
-                        <td>{{producto.nombre}}</td>
-                        <td>
-                            <select name="singleSelect" ng-model="producto.cantidad" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
-                        </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>-->
     </div>
 </div>
 <div class="modal-footer">
     <h1 class="text-center">{{totalCompra()| currency}} </h1>
-    <a href="#suPedido" class="btn btn-default" style="border:1px solid white;" ng-if="totalCompra() >= 90">pedir</a>
+    <a href="#suPedido" class="btn btn-default" style="border:1px solid white;" ng-if="totalCompra() >= 150">pedir</a>
     <button type="button" class="btn btn-default" style="border:1px solid white;" data-dismiss="modal">Cerrar</button>
 </div>

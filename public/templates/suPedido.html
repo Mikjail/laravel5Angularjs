@@ -5,87 +5,34 @@
 <div class="modal-body">
     <div id="menu">
         <div>
-            <table class="table table-responsive table-hover table-condensed table-bordered " ng-if="totalCantidad() > 0">
+            <table class="table table-responsive table-hover table-condensed" ng-if="totalCantBought > 0">
                 <thead>
-                    <th class="text-center">Producto</th>
+                    <th class="text-center">Producto</th>    
+                    <th class="text-center">Sabor</th>
                     <th class="text-center">Cantidad</th>
-                    <th class="text-center">Precio</th>
+                    <th class="text-center">Restar/Sumar</th>
                     <th class="text-center">Total</th>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="producto in suPedidoArepas()" ng-if="producto.cantidadTrigo > 0">
+                    <tr ng-repeat="product in productsBought()">
                         <td>
-                            <img class="pull-left" src="img/icon/trigoMaiz/btnTrigoNegro.png" alt="IconoTrigo"> Arepa de {{producto.nombre}}
+                            {{productTypeName(product).description}}
                         </td>
                         <td>
-                            {{producto.cantidadTrigo}}
+                            {{product.name}}
                         </td>
                         <td>
-                            {{producto.precio}}
+                            {{product.cant}}
                         </td>
                         <td>
-                            {{producto.cantidadTrigo * producto.precio | currency}}$
-                        </td>
-                    </tr>
-                    <tr ng-repeat="producto in suPedidoArepas()" ng-if="producto.cantidadMaiz > 0">
-                        <td>
-                            <img class="pull-left" src="img/icon/trigoMaiz/btnMaizNegro.png" alt="IconoMaiz"> Arepa de {{producto.nombre}}
+                                <a href="javascript:void(0)" ng-click="substractProduct(product)" style="color:black;"><i class="fa fa-minus" aria-hidden="true"></i>  </a>
+                                &emsp; &emsp;
+                                <a href="javascript:void(0)" ng-click="addProduct(product)" style="color:black;"> <i class="fa fa-plus" aria-hidden="true"></i></a>
                         </td>
                         <td>
-                            {{producto.cantidadMaiz}}
+                            {{product.price * product.cant | currency}}$
                         </td>
-                        <td>
-                            {{producto.precio}}
-                        </td>
-                        <td>
-                            {{producto.cantidadMaiz * producto.precio | currency}}$
-                        </td>
-                    </tr>
-                    <tr ng-repeat="producto in suPedidoTequenos()">
-                        <td>
-                            {{producto.nombre}}
-                        </td>
-                        <td>
-                            {{producto.cantidad}}
-                        </td>
-
-                        <td>
-                            {{producto.precio | currency}}
-                        </td>
-                        <td>
-                            {{producto.precio * producto.cantidad | currency}}
-                        </td>
-                    </tr>
-                    <tr ng-repeat="producto in suPedidoEmpanadas()">
-                        <td>
-                            {{producto.nombre}}
-                        </td>
-                        <td>
-                            {{producto.cantidad}}
-                        </td>
-
-                        <td>
-                            {{producto.precio | currency}}
-                        </td>
-                        <td>
-                            {{producto.precio * producto.cantidad | currency}}
-                        </td>
-                    </tr>
-                    <tr ng-repeat="producto in suPedidoSalsas()">
-                        <td>
-                            Salsa {{producto.nombre}}
-                        </td>
-                        <td>
-                            {{producto.cantidad}}
-                        </td>
-
-                        <td>
-                            {{producto.precio | currency}}
-                        </td>
-                        <td>
-                            {{producto.precio * producto.cantidad | currency}}
-                        </td>
-                    </tr>
+                    </tr>       
                 </tbody>
             </table>
         </div>
