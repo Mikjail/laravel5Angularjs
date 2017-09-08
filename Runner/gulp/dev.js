@@ -55,11 +55,12 @@ gulp.task('devHtmlBuilder', function() {
 /**
  * Copia todos los archivos que necesita produccion.
  */
-gulp.task('serve:dev', ['devJsBuilder', 'devHtmlBuilder'], function() {
+gulp.task('serve:dev', ['styles', 'devJsBuilder', 'devHtmlBuilder'], function() {
+    gulp.watch(devConfig.lessWatch, ['styles', gModule.browserSync.reload]);
     gModule.browserSync({
         startPath: "",
         server: {
-            baseDir: [devConfig.serve.base, devConfig.serve.base + "*.html"]
+            baseDir: [devConfig.serve.base]
         },
         ghostMode: {
             clicks: true,
@@ -69,8 +70,6 @@ gulp.task('serve:dev', ['devJsBuilder', 'devHtmlBuilder'], function() {
         },
         injectChanges: true,
     });
-    gulp.watch(devConfig.lessWatch, ['styles', gModule.browserSync.reload]);
-    gulp.watch(devConfig.tsJsDev, ['devJsBuilder', gModule.browserSync.reload]);
     gulp.watch(devConfig.jsWatch).on('change', gModule.browserSync.reload);
     gulp.watch(devConfig.htmls).on('change', gModule.browserSync.reload);
 });

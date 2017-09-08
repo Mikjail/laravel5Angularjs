@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html ng-app="starter">
+<html  lang="en-US" ng-app="starter">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <meta charset="utf-8">
@@ -21,10 +20,10 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Custom CSS -->
-    <link rel="icon" href="favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="css/lib.css" rel="stylesheet">
-    <link href="css/camburPinton.css" rel="stylesheet">
+    <link rel="icon" href="<?= asset('favicon.ico') ?>">
+    <link rel="shortcut icon" href="<?= asset('favicon.ico') ?>">
+    <link href="<?= asset('css/lib.css') ?>" rel="stylesheet">
+    <link href="<?= asset('css/camburPinton.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -62,7 +61,7 @@
                         <a class="page-scroll" href="#mapSection">Mapa</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contacto</a>
+                        <a class="page-scroll" href="#contact">Contacto {{products.name}}</a>
                     </li>
                     <li>
                         <a id="btnPedido" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
@@ -70,7 +69,7 @@
                     <li>
                         <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
                             <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
-                            <strong>{{totalCantBought}}</strong>
+                            <strong>{{totalCantidad()}}</strong>
                         </a>
                     </li>
                 </ul>
@@ -98,11 +97,6 @@
         </div>
     </header>
     <section id="nosotros" class="nosotros-section visible-md visible-lg">
-        <div id="parrafo" class="col-md-8 col-md-offset-2">
-            <p>Sentimos que hablamos por todos los venezolanos al decir que fuimos recibidos de la manera más calurosa en un país con el que contrastamos enriquecedoramente en nuestras formas de ser. Queremos recompensar a nuestros anfitriones con lo más
-                rico de nuestras costumbres.</p>
-            <p>Llegamos en familia para trabajar y darles lo mejor de nosotros. En principio queremos que degusten los platos más célebres de la gastronomía de nuestro país y para comenzar con ello no hay otra manera de hacerlo que con la arepa.</p>
-        </div>
     </section>
     <!-- Download Section -->
     <section id="food" class="food-section text-center">
@@ -118,6 +112,33 @@
             </div>
         </div>
     </section>
+    <section class="arepasGallery">
+        <div class="container-fluid">
+        <div class="row">
+            <div style="float:left;">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/arepas/ReinaPepiada.jpg" alt="Los Angeles">
+                    </div>
+                    <div class="item" ng-repeat="product in products" ng-if="product.name != 'Palta con Pollo' && product.img != ''">
+                        <img src={{product.img}} alt={{product.name}}>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+                <div class="text-center visible-lg">                
+                    <h1>Come rico y se Feliz</h1>
+               </div>
+        </div>
+            </div>
+    </section>
+      <div class="row text-center visible-sm visible-xs">
+        <hr>
+        <a class="btn btn-default" href="#menu" data-toggle="modal" data-target="#myModalComprar"><span style="color: white; ">Pedir</span></a>
+    </div>
     <!-- About Section -->
     <section class="container map-section" id="mapSection">
         <div class="container">
@@ -134,34 +155,35 @@
             <p><span style="color:#f39200">Próximamente ampliaremos nuestro rango </span></p>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center " ng-controller="formCtrl ">
         <contacto></contacto>
     </section>
     <section class="copyRight-section ">
         <div class="container text-center ">
-            <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a> &copy; Todos los derechos reservados 2016</p>
+            <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>                &copy; Todos los derechos reservados 2016</p>
         </div>
     </section>
     <!-- inject:js -->
     <!-- endinject -->
-    <script src="<?= asset('js/lib.min.js') ?>"></script>
+    <script src="<?= asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
-    <script src="<?= asset('js/scroll.js') ?>"></script>
+     <script src="<?= asset('js/scroll.js')?>"></script>
     <!-- Services -->
-    <script src="<?= asset('js/app.js') ?>"></script>
+     <script src="<?= asset('js/app.js')?>"></script>
     <!-- App -->
-    <script src="<?= asset('js/camburTemplate.js') ?>"></script>
+     <script src="<?= asset('js/camburTemplate.js')?>"></script>
     <!-- Services -->
-    <script src="<?= asset('js/service.js') ?>"></script>
+     <script src="<?= asset('js/service.js')?>"></script>
     <!-- Controller  -->
-    <script src="<?= asset('js/controllers/controller.js') ?>"></script>
+     <script src="<?= asset('js/controllers/controller.js')?>"></script>
     <!-- Directives  -->
-    <script src="<?= asset('js/directives/directives.js') ?>"></script>
+     <script src="<?= asset('js/directives/directives.js')?>"></script>
     <script>
-        (function(i, s, o, g, r, a, m) {
+        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
+            i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o),
@@ -175,14 +197,14 @@
         ga('send', 'pageview');
     </script>
     <script type="text/javascript" charset="utf-8">
-        $(function() {
+        $(function () {
             $("img.lazy").lazyload();
             effect: "fadeIn"
         });
     </script>
     <div id="fb-root"></div>
     <script>
-        (function(d, s, id) {
+        (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s);
@@ -193,7 +215,7 @@
     </script>
     <script>
         // dom ready
-        $(function() {
+        $(function () {
 
             //if (typeof google !== "undefined"){
             if (window.google && google.maps) {
@@ -307,10 +329,10 @@
 
         function lazyLoadGoogleMap() {
             $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyC9qoUtPZFr24eqjQ0Lfhf4HXUMg_T85CU&callback=initMap")
-                .done(function(script, textStatus) {
+                .done(function (script, textStatus) {
                     //alert("Google map script loaded successfully");
                 })
-                .fail(function(jqxhr, settings, ex) {
+                .fail(function (jqxhr, settings, ex) {
                     //alert("Could not load Google Map script: " + jqxhr);
                 });
         }

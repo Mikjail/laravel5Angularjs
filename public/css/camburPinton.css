@@ -232,33 +232,70 @@ input[type=number]::-webkit-outer-spin-button {
 .content-section .contactForm label {
   color: white;
 }
+.arepasGallery {
+  height: auto;
+  padding: 0;
+  background: url(../img/nsBg.jpg) no-repeat bottom right;
+}
+.arepasGallery .imgArepas {
+  margin-left: 0;
+}
+.arepasGallery h1 {
+  color: white;
+  margin-top: 6%;
+}
 .food-section {
   width: 100%;
   height: auto;
   padding: 40px 0;
+  background-color: white;
+}
+.food-section a {
+  background-color: black;
+}
+@media (max-width: 960px) {
+  .food-section {
+    background-color: black;
+  }
 }
 @media (min-width: 1024px) {
   .food-section {
     height: 100%;
-    background: url(../img/background1.jpg) no-repeat center;
-    background-size: cover;
+    background: url(../img/food.gif) no-repeat bottom right fixed;
+    background-color: white;
+  }
+  .food-section a {
     background-color: black;
   }
 }
-.food-section a {
-  color: black;
+.food-section ul {
+  list-style-type: none;
+  padding: 0;
 }
 .food-section .modal-header {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   font-family: "Arial", "sans-serif";
 }
+.food-section .modal-header .btnPedir {
+  border: 1px solid black;
+  color: black;
+  margin-top: 5px;
+}
+.food-section .modal-header .btnPedir:hover,
+.food-section .modal-header .btnPedir:active,
+.food-section .modal-header .btnPedir:focus {
+  background-color: #f39200;
+}
+.food-section .modal-header a {
+  background-color: white;
+}
 .food-section .modal-body {
-  background-color: black;
-  color: white;
+  color: black;
 }
 .food-section .modal-body a {
-  color: white;
+  color: black;
+  background-color: white;
 }
 .food-section .modal-body .table {
   background-color: white;
@@ -272,11 +309,16 @@ input[type=number]::-webkit-outer-spin-button {
   vertical-align: text-top;
 }
 .food-section .modal-footer {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 .food-section .modal-footer a {
   color: white;
+  background-color: black;
+}
+.food-section .modal-footer button {
+  color: white;
+  background-color: grey;
 }
 #formPedido {
   text-align: left;
@@ -305,6 +347,8 @@ input[type=number]::-webkit-outer-spin-button {
   height: 400px;
 }
 .nosotros-section {
+  background: url(../img/nosotros.png) no-repeat center center;
+  /* Create the parallax scrolling effect */
   background-color: black;
   width: 100%;
   height: 300px;

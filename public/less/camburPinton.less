@@ -206,6 +206,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
 .imgArepas{
     margin-top: 10px;     
 }
@@ -230,6 +231,8 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 8px; border: 1px solid white;
     border-radius: 100%;
 }
+
+
 @-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(1);
@@ -276,34 +279,65 @@ input[type=number]::-webkit-outer-spin-button {
         }
     } 
 }
-
+.arepasGallery{
+    height:auto;
+    padding:0;
+    .imgArepas{
+        margin-left:0;
+    }
+    background: url(../img/nsBg.jpg) no-repeat bottom right;
+    h1{
+        color:white;
+        margin-top: 6%;
+    }
+}
 .food-section {
     width: 100%;
     height: auto;
     padding: 40px 0;
+    background-color: white;
+
+        a{
+        background-color:black;
+    }
+    @media(max-width:960px) {
+        background-color: black;
+    }
     @media(min-width:1024px) {
     height:100%;
-    background: url(../img/background1.jpg) no-repeat center;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-    background-color: black;
-    }
+    background: url(../img/food.gif) no-repeat bottom right fixed;
+    background-color: white;
     a{
-        color: black;
+        background-color:black;
+    }
+    }
+    ul{
+          list-style-type: none;
+          padding:0;
     }
     .modal-header{
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         font-family: "Arial","sans-serif";
+        .btnPedir{
+            border:1px solid black; 
+            color:black;
+            margin-top:5px;
+            &:hover,
+            &:active,
+            &:focus{
+                background-color:@home;
+            }
+        }
+        a{
+            background-color: white;
+        }
     }
-    
     .modal-body{
-            background-color:black;
-            color:white;
+            color:black;
             a{
-                color:white;
+                color:black;
+                background-color: white;
             }
             .table{
                 background-color:white;
@@ -317,13 +351,18 @@ input[type=number]::-webkit-outer-spin-button {
                         vertical-align: text-top;
                     }
                 }
-            }    
-    }
+            } 
+        }
     .modal-footer{
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         a{
             color: white;
+            background-color: black;
+        }
+        button{
+               color: white;
+                background-color: grey;
         }
     }
 }
@@ -353,6 +392,8 @@ input[type=number]::-webkit-outer-spin-button {
 
   
 .nosotros-section{
+    background: url(../img/nosotros.png) no-repeat center center;
+        /* Create the parallax scrolling effect */
     background-color:black;
     width: 100%;
     height: 300px;
@@ -367,6 +408,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 70px 0;
     }
 }
+
 .slideSection{
     padding: 12% 12% 0;
 }
