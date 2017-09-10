@@ -23,6 +23,7 @@ module.exports = function () {
             $ : require('gulp-load-plugins')({
                 lazy: true
             }),
+            babel : require('gulp-babel'),
             devOptions : {"target": "es5", "module": "commonjs", "noImplicitAny": false,
             "removeComments": true, "preserveConstEnums": true },
             prodOptions : {"target": "es5", "module": "commonjs", "noImplicitAny": false,

@@ -175,11 +175,7 @@
     <!-- App -->
      <script src="<?= asset('js/camburTemplate.js')?>"></script>
     <!-- Services -->
-     <script src="<?= asset('js/service.js')?>"></script>
-    <!-- Controller  -->
-     <script src="<?= asset('js/controllers/controller.js')?>"></script>
-    <!-- Directives  -->
-     <script src="<?= asset('js/directives/directives.js')?>"></script>
+     <script src="<?= asset('js/camburPinton.v1.8.min.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

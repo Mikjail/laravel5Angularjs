@@ -6,7 +6,7 @@ var gModule = require("./gulpModules.js")();
 var distConfig = require('./distConfig.js')();
 var libConfig = require("./gulpconfig.js")();
 
-var PRODVERSION = "v1.5";
+var PRODVERSION = "v1.8";
 console.log("TRBAJANDO SOBRE VERSION:" + PRODVERSION);
 //////////////////////////////////////////////////////
 //                    HTML-TEMPLATE-CACHE           //
@@ -76,9 +76,10 @@ gulp.task('prodMinFiles', ['prodMinFilesMinJS']);
 
 gulp.task('prodMinFilesMinJS', ['prodMinFilesMinCSS'], function() {
     return gulp.src(distConfig.jsToMinify)
-        .pipe(gModule.uglify()).on('error', function(e) {
-            console.log(e);
-        })
+        .pipe(gModule.sourcemaps.init())
+        .pipe(gModule.babel({
+            presets: ['env']
+        }))
         .pipe(gModule.concat('camburPinton.js'))
         .pipe(gModule.rename({
             suffix: "." + PRODVERSION + ".min"

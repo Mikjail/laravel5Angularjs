@@ -1,7 +1,7 @@
-// url= "cambur-pinton.com/admin/routes/api"
+// url= "cambur-pinton.com/admin/routes/api/"
 
 var app = angular.module('starter', ['ngRoute', 'camburTemplate'])
-.constant('API_URL', 'http://localhost:8000/api/');
+.constant('API_URL', 'https://www.cambur-pinton.com/admin/routes/api/');
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/detalles', {
