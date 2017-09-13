@@ -32,11 +32,11 @@ class Products extends Controller
         $product = new Product;
 
         $product->name = $request->input('name');
-        $product->email = $request->input('description');
-        $product->position = $request->input('img');
-        $product->position = $request->input('price');
-        $product->position = $request->input('cant');
-        $product->position = $request->input('productstype_id');
+        $product->description = $request->input('description');
+        $product->img = $request->input('img');
+        $product->price = $request->input('price');
+        $product->cant = $request->input('cant');
+        $product->productstype_id = $request->input('productstype_id');
         $product->save();
 
         return 'product record successfully created with id ' . $product->id;

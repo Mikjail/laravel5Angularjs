@@ -1,7 +1,7 @@
 var ambiente = require('../config.ambiente')();
 module.exports = function() {
 
-    var mainDist = ambiente.path + "dist/";
+    var mainDist = ambiente.prod;
     var css = mainDist + 'css/';
     var js = mainDist + 'js/';
     var fonts = mainDist + 'fonts/';

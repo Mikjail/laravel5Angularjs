@@ -19,6 +19,17 @@ Route::get('/products/{id?}',['middleware' => 'cors',
 Route::get('/productsType/{id?}',['middleware' => 'cors', 
     'uses' => 'ProductsType@index']);
 
+// Route::post('/contactUs/{id?}',['middleware' => 'cors', 
+//     'uses'=>'ContactUsController@contactUSPost']);
+
+Route::post('/contactUs',['middleware' => 'cors',  'uses'=>'ContactUsController@contactUSPost' ]);
+
 // Route::post('/products', 'Products@store');
 // Route::post('/products/{id}', 'Products@update');
 // Route::delete('/products/{id}', 'Products@destroy');
+// function(Illuminate\Http\Request $request, \Illuminate\Mail\Mailer $mailer){
+//         $mailer
+//         ->to($request->input('email'))
+//         ->send(new \App\Mail\formContactCambur($request->input('nombre')));
+//         return "success";
+//     }

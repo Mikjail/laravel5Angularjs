@@ -171,11 +171,7 @@
     <!-- jQuery -->
      <script src="<?= asset('js/scroll.js')?>"></script>
     <!-- Services -->
-     <script src="<?= asset('js/app.js')?>"></script>
-    <!-- App -->
-     <script src="<?= asset('js/camburTemplate.js')?>"></script>
-    <!-- Services -->
-     <script src="<?= asset('js/camburPinton.v1.8.min.js')?>"></script>
+     <script src="<?= asset('js/camburPinton.v2.0.min.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
