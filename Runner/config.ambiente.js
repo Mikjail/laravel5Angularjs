@@ -1,7 +1,7 @@
 module.exports = function() {
     var ambiente = {
-        path: 'C:/xampp/htdocs/proyectos/laravel5Angularjs/front_dev/',
-        prod: 'C:/xampp/htdocs/proyectos/laravel5Angularjs/public/'
+        path: '/Applications/XAMPP/xamppfiles/htdocs/proyectos/laravel5Angularjs/front_dev/',
+        prod: '/Applications/XAMPP/xamppfiles/htdocs/proyectos/laravel5Angularjs/public/'
     }
     return ambiente;
 }

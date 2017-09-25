@@ -232,26 +232,63 @@ input[type=number]::-webkit-outer-spin-button {
 .content-section .contactForm label {
   color: white;
 }
-.arepasGallery {
-  height: auto;
-  padding: 0;
-  background: url(../img/nsBg.jpg) no-repeat bottom right;
-}
-.arepasGallery .imgArepas {
-  margin-left: 0;
-}
-.arepasGallery h1 {
-  color: white;
-  margin-top: 6%;
-}
 .food-section {
   width: 100%;
   height: auto;
   padding: 40px 0;
   background-color: white;
 }
-.food-section a {
+.food-section .warning {
+  color: #f39200;
+  font-size: 14px;
+}
+.food-section .panel-middle img,
+.food-section .panel-left img,
+.food-section .panel-right img {
+  transition: 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.food-section .panel-middle img:hover,
+.food-section .panel-left img:hover,
+.food-section .panel-right img:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  transition: 0.5s;
+}
+.food-section .btn-default-pedir {
   background-color: black;
+}
+.food-section .panel-left img,
+.food-section .panel-right img {
+  height: 60%;
+  width: 80%;
+}
+.food-section .panel-left a,
+.food-section .panel-right a {
+  padding: 0;
+}
+.food-section .panel-left a:hover,
+.food-section .panel-right a:hover {
+  transition: 0.5s;
+  color: black;
+}
+.food-section .panel-left a:hover .btn-pedir-img,
+.food-section .panel-right a:hover .btn-pedir-img {
+  opacity: 1;
+  color: white;
+  position: relative;
+  margin-top: -20%;
+  transition: 0.5s;
+}
+.food-section .panel-left .btn-pedir-img,
+.food-section .panel-right .btn-pedir-img {
+  position: relative;
+  opacity: 0;
+  color: white;
+  margin-top: -20%;
+  margin-bottom: 13%;
+  margin-left: 16%;
+  width: 17%;
 }
 @media (max-width: 960px) {
   .food-section {
@@ -261,11 +298,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media (min-width: 1024px) {
   .food-section {
     height: 100%;
-    background: url(../img/food.gif) no-repeat bottom right fixed;
     background-color: white;
-  }
-  .food-section a {
-    background-color: black;
   }
 }
 .food-section ul {

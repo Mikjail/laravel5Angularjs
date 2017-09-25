@@ -33,138 +33,115 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-controller="productosCtrl ">
-    <!-- Navigation -->
-    <div id="fb-root"></div>
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
+<!-- Navigation -->
+<div id="fb-root"></div>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-cutlery"></i>Cambur Pintón
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#food">Menú</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#mapSection">Mapa</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contacto {{products.name}}</a>
-                    </li>
-                    <li>
-                        <a id="btnPedido" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
-                    </li>
-                    <li>
-                        <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
-                            <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
-                            <strong>{{totalCantidad()}}</strong>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-cutlery"></i>Cambur Pintón
+            </a>
         </div>
-        <!-- /.container -->
-    </nav>
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">
-                        <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
-                    </div>
-                </div>
-                <div class="row">
-                    <a href="#food" class="bntFooter page-scroll btn btn-circle">
-                        <i class="fa fa-angle-down animated"></i>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#food">Menú</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#mapSection">Mapa</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contacto {{products.name}}</a>
+                </li>
+                <li>
+                    <a id="btnPedido" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
+                </li>
+                <li>
+                    <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
+                        <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
+                        <strong>{{totalCantidad()}}</strong>
                     </a>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
-        </div>
-    </header>
-    <section id="nosotros" class="nosotros-section visible-md visible-lg">
-    </section>
-    <!-- Download Section -->
-    <section id="food" class="food-section text-center">
-        <slide-Arepas></slide-Arepas>
-        <detalles></detalles>
-        <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div ng-view>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="arepasGallery">
-        <div class="container-fluid">
-        <div class="row">
-            <div style="float:left;">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="img/arepas/ReinaPepiada.jpg" alt="Los Angeles">
-                    </div>
-                    <div class="item" ng-repeat="product in products" ng-if="product.name != 'Palta con Pollo' && product.img != ''">
-                        <img src={{product.img}} alt={{product.name}}>
-                    </div>
-
-                </div>
-                </div>
-            </div>
-                <div class="text-center visible-lg">                
-                    <h1>Come rico y se Feliz</h1>
-               </div>
-        </div>
-            </div>
-    </section>
-      <div class="row text-center visible-sm visible-xs">
-        <hr>
-        <a class="btn btn-default" href="#menu" data-toggle="modal" data-target="#myModalComprar"><span style="color: white; ">Pedir</span></a>
+        <!-- /.navbar-collapse -->
     </div>
-    <!-- About Section -->
-    <section class="container map-section" id="mapSection">
+    <!-- /.container -->
+</nav>
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
-                    <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
-                        <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png" alt="">
-                    </div>
+                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">
+                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
+                </div>
+            </div>
+            <div class="row">
+                <a href="#food" class="bntFooter page-scroll btn btn-circle">
+                    <i class="fa fa-angle-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>
+<section id="nosotros" class="nosotros-section visible-md visible-lg">
+</section>
+<!-- Download Section -->
+<section id="food" class="food-section text-center">
+    <slide-Arepas></slide-Arepas>
+    <detalles></detalles>
+    <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div ng-view>
+
                 </div>
             </div>
         </div>
-        <div id="map"></div>
-        <div class="col-md-12 col-xs-12 textMap text-center">
-            <p><span style="color:#f39200">Próximamente ampliaremos nuestro rango </span></p>
+    </div>
+</section>
+  <div class="row text-center visible-sm visible-xs">
+    <hr>
+    <a class="btn btn-default" href="#menu" data-toggle="modal" data-target="#myModalComprar"><span style="color: white; ">Pedir</span></a>
+</div>
+<!-- About Section -->
+<section class="container map-section" id="mapSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
+                <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
+                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png" alt="">
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    <div id="map"></div>
+    <div class="col-md-12 col-xs-12 textMap text-center">
+        <p><span style="color:#f39200">Próximamente ampliaremos nuestro rango </span></p>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center " ng-controller="formCtrl ">
-        <contacto></contacto>
-    </section>
-    <section class="copyRight-section ">
-        <div class="container text-center ">
-            <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>                &copy; Todos los derechos reservados 2016</p>
-        </div>
-    </section>
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center " ng-controller="formCtrl ">
+    <contacto></contacto>
+</section>
+<section class="copyRight-section ">
+    <div class="container text-center ">
+        <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>                &copy; Todos los derechos reservados 2016</p>
+    </div>
+</section>
     <!-- inject:js -->
     <!-- endinject -->
     <script src="<?= asset('js/lib.min.js')?>"></script>

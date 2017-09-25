@@ -44,14 +44,17 @@
         <h1>Su compra esta vacía</h1>
     </div>
 </div>
+<span class="warning" ng-if="totalCompra() <= 150">Su pedido no puede ser menor a 150$Ar</span>
 
 <div class="modal-footer" ng-if="isOpen() == true">
-    <h1 class="text-center">{{totalCompra()| currency}} </h1>
+   <h3 class="text-center" >{{totalCompra()| currency}}</h3>
+   <h4 class="text-center warning" ng-if="totalCompra() >= 1">- 10%Desc =</h4>
+   <h1 class="text-center" ng-if="totalCompra() >= 1"> {{promo()| currency}}  </h1>
     <a href="#menu" class="btn btn-default pull-left" style="border:1px solid white;" ng-if="totalCompra() >= 0">Menu</a>
-    <a href="#enviar" class="btn btn-default" style="border:1px solid white;" ng-if="totalCompra() > 0">Continuar</a>
+    <a href="#enviar" class="btn btn-default" style="border:1px solid white;" ng-if="promo() >= 150">Continuar</a>
 </div>
 <div class="modal-footer" ng-if="isOpen() == false">
     <h1 class="text-center">{{totalCompra()| currency}} </h1>
     <a href="#menu" class="btn btn-default pull-left" style="border:1px solid white;" ng-if="totalCompra() >= 0">Menu</a>
-    <a href="#fueraHorario" class="btn btn-default" style="border:1px solid white;" ng-if="totalCompra() > 0">Continuar</a>
+    <a href="#fueraHorario" class="btn btn-default" style="border:1px solid white;" ng-disabled="promo() < 150">Continuar</a>
 </div>

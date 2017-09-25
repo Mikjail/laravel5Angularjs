@@ -69,9 +69,7 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
         $scope.substractProduct = (product)=>{ 
             product.cant -= 1;
-            if($scope.totalCompra()< 150){
-                product.cant += 1;               
-            }
+          
             console.log(product.cant);
          }
         });
@@ -83,6 +81,9 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
     }); 
 
+    $scope.promo = function(){
+       return $scope.totalCompra() * 0.90;
+    }
 
     $scope.isOpen = function() {
         var date = new Date();
@@ -123,7 +124,7 @@ function formCtrl($scope, $http, $location, API_URL) {
             comment: $scope.comment,
             productoPedido: $scope.productsBought(),
             productsType: $scope.productsType,
-            total:$scope.totalCompra()
+            total:$scope.promo()
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
             console.log(response);
        

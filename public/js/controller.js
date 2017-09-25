@@ -1,5 +1,5 @@
 productosCtrl.$inject = ['$scope', 'ProductsService', 'ProductsTypeService', '$q'];
-formCtrl.$inject = ['$scope', '$http', '$location']
+formCtrl.$inject = ['$scope', '$http', '$location', 'API_URL']
 angular.module('starter')
     .controller("productosCtrl", productosCtrl)
     .controller("formCtrl", formCtrl);
@@ -69,9 +69,7 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
         $scope.substractProduct = (product)=>{ 
             product.cant -= 1;
-            if($scope.totalCompra()< 150){
-                product.cant += 1;               
-            }
+          
             console.log(product.cant);
          }
         });
@@ -83,6 +81,9 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
     }); 
 
+    $scope.promo = function(){
+       return $scope.totalCompra() * 0.90;
+    }
 
     $scope.isOpen = function() {
         var date = new Date();
@@ -104,37 +105,32 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
 }
 
-function formCtrl($scope, $http, $location) {
-
+function formCtrl($scope, $http, $location, API_URL) {
+  
 
     $scope.registrarForm = function() {
         console.log($scope.productsBought())
-        $http.post('formContact/pedidoForm.php', {
-            nombreForm: $scope.nombreForm,
-            apellidoForm: $scope.apellidoForm,
-            mailForm: $scope.mailForm,
-            telForm: $scope.telForm,
-            calleForm: $scope.calle,
-            alturaForm: $scope.altura,
-            pisoForm: $scope.piso,
-            deptoForm: $scope.depto,
-            localidadForm: $scope.localidad,
-            commentForm: $scope.comment,
-            productoPedidoForm: $scope.productsBought(),
-            productsType: $scope.productsType
-        }).success(function(response) {
+        $http({method: 'POST',
+            url: API_URL+'contactUs', data:$.param({
+            nombre: $scope.nombreForm,
+            apellido: $scope.apellidoForm,
+            email: $scope.mailForm,
+            telefono: $scope.telForm,
+            calle: $scope.calle,
+            altura: $scope.altura,
+            piso: $scope.piso,
+            depto: $scope.depto,
+            localidad: $scope.localidad,
+            comment: $scope.comment,
+            productoPedido: $scope.productsBought(),
+            productsType: $scope.productsType,
+            total:$scope.promo()
+        }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
             console.log(response);
-            $location.path("/finalOrder");
-            $scope.nombreForm = "";
-            $scope.apellidoForm = "";
-            $scope.mailForm = "";
-            $scope.telForm = "";
-            $scope.comment = "";
-            $scope.calle = "";
-            $scope.altura = "";
-            $scope.localidad = "";
-            $scope.piso = "";
-            $scope.depto = "";
+       
+        }).error(function(response) {
+            console.log(response);
+            alert('This is embarassing. An error has occured. Please check the log for details');
         });
     }
 
