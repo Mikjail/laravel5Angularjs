@@ -28,3 +28,16 @@ app.directive("contacto", function() {
         templateUrl: "templates/contacto.html"
     }
 });
+app.directive("finalOrder", function() {
+    return {
+        restrict: "E",
+        templateUrl: "templates/suPedido.html"
+    }
+});
+app.directive("fueraHorario", function() {
+    return {
+        restrict: "E",
+        templateUrl: "templates/fueraHorario.html"
+    }
+});
+

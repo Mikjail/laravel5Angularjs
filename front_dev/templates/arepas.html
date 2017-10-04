@@ -8,64 +8,100 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 visible-md visible-lg panel-left">
-                <a href=""  href="#menu" data-toggle="modal" data-target="#myModalComprar"><img src="./img/arepas/tequenitos.png" alt=""><h1 class="btn-pedir-img" >Adictivos</h1></a>
-                <h2>Tequenos</h2>
-                <ul ng-repeat="product in products" ng-if="product.productstype_id == 4">
+            <a  href="#menu" data-toggle="modal" data-target="#myModalComprar"> 
+                <img src="img/icon/heart.gif" class="lazy" data-original="./img/arepas/empanadas.png" alt=""><h1 class="btn-pedir-img" >Crujientes</h1></a>
+            <h2>Empanadas</h2>
+            <ul ng-repeat="product in products" ng-if="product.productstype_id == 3">
+                <li>
+                    <h5>{{product.name}}</h5>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-4 visible-md visible-lg text-center panel-middle">
+                <a href="#menu" data-toggle="modal" data-target="#myModalComprar"> <img src="img/icon/heart.gif" class="lazy" data-original="./img/arepas/comeRico.jpg" alt=""><h1 class="btn-pedir-img" >Platanitos</h1></a>
+               <br>
+                <a  href="#menu" data-toggle="modal" data-target="#myModalComprar"><i class="btn-delivery fa fa-motorcycle fa-4x" aria-hidden="true"></i>
+                <br>
+                Pedir
+            </a>
+              
+        </div>
+        <div class="col-md-4 visible-md visible-lg panel-right">
+            <a  href="#menu" data-toggle="modal" data-target="#myModalComprar"> <img src="img/icon/heart.gif" class="lazy" data-original="./img/arepas/patacones.jpg" alt=""><h1 class="btn-pedir-img" >Sabrosos</h1></a>
+            <div class="col-md-12 visible-md visible-lg">
+                <h2>Patacones</h2>
+                <ul ng-repeat="product in products" ng-if="product.productstype_id == 5">
                     <li>
                         <h5>{{product.name}}</h5>
                     </li>
                 </ul>
-            
+
+            </div>
         </div>
-        <div class="col-sm-12 col-md-4 text-center panel-middle">
-                <div class="col-md-12 visible-md visible-lg text-center">
-                        <br>
-                        <h2>Arepas</h2>
-                        <ul ng-repeat="product in products" ng-if="product.productstype_id == 1">
-                            <li>
-                                <h5>{{product.name}}</h5>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#menu" data-toggle="modal" data-target="#myModalComprar"><div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="img/arepas/ReinaPepiada.jpg" alt="Reina Pepiada">
-                                </div>
-                                <div class="item" ng-repeat="product in products" ng-if="product.name != 'Palta con Pollo' && product.img != '' && product.productstype_id == 1">
-                                    <img src={{product.img}} alt={{product.name}}>
-                                </div>
-            
-                            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 visible-md visible-lg panel-left">
+            <a  href="#menu" data-toggle="modal" data-target="#myModalComprar"> <img src="img/icon/heart.gif" class="lazy" data-original="./img/arepas/tequenitos.png" alt=""><h1 class="btn-pedir-img" >Deliciosos</h1></a>
+            <h2>Tequenos</h2>
+            <ul ng-repeat="product in products" ng-if="product.productstype_id == 4">
+                <li>
+                    <h5>{{product.name}}</h5>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-sm-12 col-md-4 text-center">
+            <div class="col-md-12 visible-md visible-lg text-center">
+                <br>
+                <h2>Arepas</h2>
+                <ul ng-repeat="product in products" ng-if="product.productstype_id == 1">
+                    <li>
+                        <h5>{{product.name}}</h5>
+                    </li>
+                </ul>
+            </div>
+            <a href="#menu" data-toggle="modal" data-target="#myModalComprar">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                             <img src="img/icon/heart.gif" class="lazy" data-original="img/arepas/ReinaPepiada.jpg" alt="Reina Pepiada">
                         </div>
-                    </a>
+                        <div class="item" ng-repeat="product in products" ng-if="product.name != 'Palta con Pollo' && product.img != '' && product.productstype_id == 1">
+                             <img src={{product.img}} alt={{product.name}}>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
         </div>
         <div class="col-md-4 visible-md visible-lg panel-right">
-            <a href="" href="#menu" data-toggle="modal" data-target="#myModalComprar"><img src="./img/arepas/patacones.jpg" alt=""><h1 class="btn-pedir-img" >Sabrosos</h1></a>
+            <a  href="#menu" data-toggle="modal" data-target="#myModalComprar"> <img src="img/icon/heart.gif" class="lazy" data-original="./img/arepas/quesillo.png" alt=""><h1 class="btn-pedir-img" >Quesillo</h1></a>
             <div class="col-md-12 visible-md visible-lg">
-                    <h2>Patacones</h2>
-                    <ul ng-repeat="product in products" ng-if="product.productstype_id == 5">
-                            <li>
-                                <h5>{{product.name}}</h5>
-                            </li>
-                        </ul>
-                    <!-- <ul ng-repeat="product in products" ng-if="product.productstype_id == 3">
+                <h2>Postres</h2>
+                <ul ng-repeat="product in products" ng-if="product.productstype_id == 7">
+                    <li>
+                        <h5>{{product.name}}</h5>
+                    </li>
+                </ul>
+                <!-- <ul ng-repeat="product in products" ng-if="product.productstype_id == 3">
                         <li>
                             <h5>{{product.name}}</h5>
                         </li>
                     </ul> -->
-                </div>
+            </div>
         </div>
     </div>
+
     <br>
     <div class="row">
-        <div class="col-md-offset-5 col-md-2 visible-md visible-lg text-center">
+        <div class="col-md-offset-5 col-md-2 text-center">
             <a class="btn btn-default-pedir" href="#menu" data-toggle="modal" data-target="#myModalComprar"><span style="color: white">Pedir</span></a>
         </div>
-        </div>
-   
-<!-- 
+    </div>
+
+    <!-- 
     <div class="col-md-2 col-md-offset-4 visible-md visible-lg">
         <h2>Patacon</h2>
         <ul ng-repeat="product in products" ng-if="product.productstype_id == 5">
@@ -81,4 +117,4 @@
         -->
 
 
-    </div>
+</div>

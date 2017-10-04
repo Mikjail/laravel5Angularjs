@@ -52,7 +52,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
+                    <li class="hidden">`
                         <a href="#page-top"></a>
                     </li>
                     <li>
@@ -113,29 +113,22 @@
             </div>
         </div>
     </section>
-      <div class="row text-center visible-sm visible-xs">
-        <hr>
-        <a class="btn btn-default" href="#menu" data-toggle="modal" data-target="#myModalComprar"><span style="color: white; ">Pedir</span></a>
-    </div>
+
     <!-- About Section -->
-    <section class="container map-section" id="mapSection">
-        <div class="container">
-            <div class="row">
+    <section class="container-fluid map-section" id="mapSection">   
+            <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
                     <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
                         <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png" alt="">
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
         <div id="map"></div>
-        <div class="col-md-12 col-xs-12 textMap text-center">
-            <p><span style="color:#f39200">Próximamente ampliaremos nuestro rango </span></p>
-        </div>
+       
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center " ng-controller="formCtrl ">
+    <section id="contact" class="container-fluid content-section text-center " ng-controller="formCtrl ">
         <contacto></contacto>
     </section>
     <section class="copyRight-section ">

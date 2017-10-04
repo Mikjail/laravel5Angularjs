@@ -7,6 +7,22 @@
     <div class="col-md-12">
         <form id="formPedido" data-toggle="validator" ng-submit="registrarForm();" role="form">
             <div class="col-md-12">
+                <div class="col-md-6" ng-if="isOpen() == false">
+                    <br>
+                    <p><i class="fa fa-clock-o style-P" aria-hidden="true"></i> &nbsp; Programa tu pedido!</p>
+                </div>
+                <div class="col-md-3 form-group" ng-if="isOpen() == false">
+                            <label for="inputName" class="control-label">Hora</label>
+                            <select class="form-control" name="singleSelect" ng-model="schedule.hour" ng-options="i for i in [19,20,21,22,23]"  required>
+                            </select>
+                               
+                            <div class="help-block with-errors">19 a 23:30</div>
+                </div>
+                <div class="col-md-3 form-group" ng-if="isOpen() == false">
+                        <label for="inputName" class="control-label">Min</label>
+                        <select class="form-control" name="singleSelect" ng-model="schedule.min" ng-options="i for i in [00,15,30,45]"  required>
+                        </select>
+                </div>
                 <div class="col-md-12 form-group">
                     <label for="inputName" class="control-label">Nombre</label>
                     <input type="text" class="form-control" id="inputName" pattern="([A-z-ñ\s]){1,}$" maxlength="20" placeholder="Nombre*" ng-model="nombreForm" required>
@@ -63,7 +79,7 @@
                     <label for="comment" class="control-label">Comentario Adicional</label>
                     <textarea class="form-control" rows="5" placeholder="Comentario*" ng-model="comment"></textarea>
                     <div class="help-block with-errors">170 Max</div>
-                    <a href="#suPedido" class="btn btn-default" style="border:1px solid black;">volver</a>
+                    <a href="#suPedido" class="btn btn-default" style="border:1px solid black; color:black;">volver</a>
                     <button type="submit" class="btn btn-default" style="border:1px solid black; color:black;">Enviar</button>
                 </div>
             </div>

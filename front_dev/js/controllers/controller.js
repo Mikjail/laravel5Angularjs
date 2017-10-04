@@ -92,11 +92,11 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
         if (day >= 2 && day <= 7) {
             if (hour >= 18 && hour <= 23) {
-                return true;
+                return false;
             }
         }
 
-        return true;
+        return false;
     }
 
     $scope.cantidadTotal = 0;
@@ -126,7 +126,17 @@ function formCtrl($scope, $http, $location, API_URL) {
             productsType: $scope.productsType,
             total:$scope.promo()
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
-            console.log(response);
+            $location.path("/finalOrder");
+            $scope.nombreForm = "";
+            $scope.apellidoForm = "";
+            $scope.mailForm = "";
+            $scope.telForm = "";
+            $scope.comment = "";
+            $scope.calle = "";
+            $scope.altura = "";
+            $scope.localidad = "";
+            $scope.piso = "";
+            $scope.depto = "";
        
         }).error(function(response) {
             console.log(response);
@@ -136,11 +146,11 @@ function formCtrl($scope, $http, $location, API_URL) {
 
     $scope.registrarConsulta = function() {
         $http.post('back/consultaForm.php', {
-            nombreForm: $scope.nombreForm,
-            apellidoForm: $scope.apellidoForm,
-            mailForm: $scope.mailForm,
-            telForm: $scope.telForm,
-            commentForm: $scope.comment
+            nombre: $scope.nombreForm,
+            apellido: $scope.apellidoForm,
+            email: $scope.mailForm,
+            telefono: $scope.telForm,
+            comment: $scope.comment,
         }).success(function(response) {
             console.log(response);
             $scope.nombreForm = "";

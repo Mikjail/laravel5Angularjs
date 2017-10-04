@@ -926,7 +926,7 @@
 																			</tbody>
 																</table>
 																<br>
-
+																@if (isset($productoPeido))
 																<table class="camburTable">
 																	<thead>
 																		<th>Producto</th>
@@ -946,14 +946,20 @@
 
 																			
 									
-																		<tr>
-																		@endforeach		<td  colspan='3'><strong>TOTAL</strong></td>
-																					<td><strong>{{ $total }}</strong></td>
-																				</tr>
+																		</tr>
+																		@endforeach	
+																		<tr>	
+																			<td  colspan='3'><strong>Descuento</strong></td>
+																			<td><strong>{{ $total * 1.10 - $total }}</strong></td>
+																		</tr>
+																		<tr>	
+																			<td  colspan='3'><strong>TOTAL</strong></td>
+																			<td><strong>{{ $total }}</strong></td>
+																		</tr>
 
-													</tbody>
-													</table>
-
+																</tbody>
+																</table>
+																@endif
 
 													</td>
 													</tr>

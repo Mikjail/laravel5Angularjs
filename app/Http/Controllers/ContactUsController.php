@@ -25,18 +25,21 @@ class ContactUsController extends Controller
         'comment' =>$request->input('comment'),
         'productoPedido' =>$request->input('productoPedido'),
         'productsType' =>$request->input('productsType'),
-         'total' =>$request->input('total')
+        'total' =>$request->input('total'),
+        'hora' =>$request->input('hora'),
+        'min' =>$request->input('min'),
         );
 
         $nombre = $request->input('nombre');
         $email = $request->input('email');
-
-
-        Mail::send('email.pedidoForm', $data , function($message) use ($nombre, $email){
-          $message->from("info@cambur-pinton.com", $nombre);
-        $message->to('mikjailsalazar@gmail.com', $email)->subject('Contacto Cambur Pinton');
-        });
+        $recipients = [["name" => $nombre, "email" =>  $email ],  ["name" => "Nicho", "email" => "nicholaisalazar@gmail.com"], ["name" => "Mika", "email" => "mikjailsalazar@gmail.com"], ["name" => "Ozzy", "email" => "oswaldosmoncricket@gmail.com"] ];
         
+        foreach($recipients as $recipient) {
+            Mail::send('email.pedidoForm', $data , function($message) use ($nombre, $email, $recipient){   
+            $message->from("info@cambur-pinton.com", "Cambur Pintón");
+            $message->to($recipient['email'], $recipient['name'])->subject('Contacto Cambur Pinton');
+            });
+        }
        return "Success";
    }
           /**

@@ -2,7 +2,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Helvetica light", "Arial", "sans-serif";
-  background-color: black;
+  background: url(../img/retina_wood.png);
 }
 html {
   width: 100%;
@@ -40,6 +40,17 @@ a:hover,
 a:focus {
   text-decoration: none;
   color: #cccccc;
+}
+.style-P {
+  color: #f39200;
+}
+.style-P:hover,
+.style-P:focus {
+  color: black;
+  transition: 0.8s;
+}
+.imgPromo {
+  width: 100%;
 }
 .light {
   font-weight: 400;
@@ -224,19 +235,29 @@ input[type=number]::-webkit-outer-spin-button {
 .content-section h3,
 .content-section h4,
 .content-section h5 {
-  color: white;
+  color: black;
 }
 .content-section .contactForm {
   text-align: left;
 }
 .content-section .contactForm label {
-  color: white;
+  color: black;
+}
+.content-section .btn-default {
+  color: black;
 }
 .food-section {
   width: 100%;
   height: auto;
   padding: 40px 0;
-  background-color: white;
+}
+.food-section .btn-delivery {
+  color: black;
+  transition: 0.6s;
+}
+.food-section .btn-delivery:hover {
+  color: #f39200;
+  transition: 0.6s;
 }
 .food-section .warning {
   color: #f39200;
@@ -258,22 +279,28 @@ input[type=number]::-webkit-outer-spin-button {
 .food-section .btn-default-pedir {
   background-color: black;
 }
+.food-section .panel-middle {
+  margin-top: 10%;
+}
 .food-section .panel-left img,
-.food-section .panel-right img {
-  height: 60%;
+.food-section .panel-right img,
+.food-section .panel-middle img {
   width: 80%;
 }
 .food-section .panel-left a,
-.food-section .panel-right a {
+.food-section .panel-right a,
+.food-section .panel-middle a {
   padding: 0;
 }
 .food-section .panel-left a:hover,
-.food-section .panel-right a:hover {
+.food-section .panel-right a:hover,
+.food-section .panel-middle a:hover {
   transition: 0.5s;
   color: black;
 }
 .food-section .panel-left a:hover .btn-pedir-img,
-.food-section .panel-right a:hover .btn-pedir-img {
+.food-section .panel-right a:hover .btn-pedir-img,
+.food-section .panel-middle a:hover .btn-pedir-img {
   opacity: 1;
   color: white;
   position: relative;
@@ -281,7 +308,8 @@ input[type=number]::-webkit-outer-spin-button {
   transition: 0.5s;
 }
 .food-section .panel-left .btn-pedir-img,
-.food-section .panel-right .btn-pedir-img {
+.food-section .panel-right .btn-pedir-img,
+.food-section .panel-middle .btn-pedir-img {
   position: relative;
   opacity: 0;
   color: white;
@@ -290,15 +318,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 16%;
   width: 17%;
 }
-@media (max-width: 960px) {
-  .food-section {
-    background-color: black;
-  }
-}
 @media (min-width: 1024px) {
   .food-section {
-    height: 100%;
-    background-color: white;
+    height: auto;
+    background: url(../img/cream_dust.png);
   }
 }
 .food-section ul {
@@ -325,10 +348,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .food-section .modal-body {
   color: black;
-}
-.food-section .modal-body a {
-  color: black;
-  background-color: white;
 }
 .food-section .modal-body .table {
   background-color: white;
@@ -357,8 +376,10 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: left;
 }
 .map-section {
+  padding: 0;
   width: 100%;
   height: auto;
+  background-color: white;
 }
 .map-section h5,
 .map-section h4,
@@ -382,7 +403,7 @@ input[type=number]::-webkit-outer-spin-button {
 .nosotros-section {
   background: url(../img/nosotros.png) no-repeat center center;
   /* Create the parallax scrolling effect */
-  background-color: black;
+  background: ;
   width: 100%;
   height: 300px;
   color: white;
