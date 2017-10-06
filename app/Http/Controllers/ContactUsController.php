@@ -26,18 +26,25 @@ class ContactUsController extends Controller
         'productoPedido' =>$request->input('productoPedido'),
         'productsType' =>$request->input('productsType'),
         'total' =>$request->input('total'),
-        'hora' =>$request->input('hora'),
-        'min' =>$request->input('min'),
+        'horario' =>$request->input('horario')
         );
 
         $nombre = $request->input('nombre');
         $email = $request->input('email');
         $recipients = [["name" => $nombre, "email" =>  $email ],  ["name" => "Nicho", "email" => "nicholaisalazar@gmail.com"], ["name" => "Mika", "email" => "mikjailsalazar@gmail.com"], ["name" => "Ozzy", "email" => "oswaldosmoncricket@gmail.com"] ];
         
+        $horario = $request->input('horario');
+
+
         foreach($recipients as $recipient) {
-            Mail::send('email.pedidoForm', $data , function($message) use ($nombre, $email, $recipient){   
+            Mail::send('email.pedidoForm', $data , function($message) use ($nombre, $email, $recipient, $horario){   
             $message->from("info@cambur-pinton.com", "Cambur Pintón");
-            $message->to($recipient['email'], $recipient['name'])->subject('Contacto Cambur Pinton');
+                if($horario != '' && isset($horario)){
+                    $message->to($recipient['email'], $recipient['name'])->subject('Pedido programado para las '+ $horario +'!');
+                }
+                else{
+                    $message->to($recipient['email'], $recipient['name'])->subject('Contacto Cambur Pinton');
+                }
             });
         }
        return "Success";

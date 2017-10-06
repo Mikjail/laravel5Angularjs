@@ -86,20 +86,24 @@ gulp.task('prodMinFilesMinJS', ['prodMinFilesMinCSS'], function() {
          console.log(distConfig.js);
 
     return gulp.src(distConfig.jsToMinify)
-        .pipe(gModule.babel({
-            presets: [require('babel-preset-env')]
-        }))
-        .pipe(gModule.concat('camburPinton.js'))
-        .pipe(gModule.rename({
-            suffix: "." + PRODVERSION + ".min"
-        }))
+        // .pipe(gModule.babel({
+        //     presets: [require('babel-preset-env')]
+        // }))
+        // .pipe(gModule.concat('camburPinton'+ PRODVERSION +'.js'))
+
+        .pipe(gModule.babelConcat('camburPinton'+ PRODVERSION +'.js'))
+        .pipe(gModule.babelMinify({
+            mangle: {
+              keepClassName: true
+            }
+          }))
         .pipe(gulp.dest(distConfig.js));
 });
 gulp.task('prodMinFilesMinCSS', function() {
     return gulp.src(distConfig.cssToMinify)
-        .pipe(gModule.concat(distConfig.css + "camburPinton.min.css"))
+        .pipe(gModule.concat(distConfig.css + "camburPinton"+PRODVERSION+".min.css"))
         .pipe(gModule.cleanCss())
-        .pipe(gulp.dest(distConfig.css));
+        .pipe(gulp.dest("/"));
 });
 
 //////////////////////////////////////////////////////

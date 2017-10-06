@@ -24,6 +24,8 @@ module.exports = function () {
                 lazy: true
             }),
             babel : require('gulp-babel'),
+            babelMinify : require("gulp-babel-minify"),
+            babelConcat : require("gulp-concat"),
             devOptions : {"target": "es5", "module": "commonjs", "noImplicitAny": false,
             "removeComments": true, "preserveConstEnums": true },
             prodOptions : {"target": "es5", "module": "commonjs", "noImplicitAny": false,

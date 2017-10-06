@@ -13,6 +13,8 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
         tequenos: null,
         empanadas: null
     };
+    $scope.scheduleHour='19';
+    $scope.scheduleMin='00';
 
     $scope.productsType={};
     $scope.products={};
@@ -124,7 +126,8 @@ function formCtrl($scope, $http, $location, API_URL) {
             comment: $scope.comment,
             productoPedido: $scope.productsBought(),
             productsType: $scope.productsType,
-            total:$scope.promo()
+            total:$scope.promo(),
+            horario:$scope.scheduleHour +' : '+$scope.scheduleMin 
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
             $location.path("/finalOrder");
             $scope.nombreForm = "";
@@ -140,24 +143,30 @@ function formCtrl($scope, $http, $location, API_URL) {
        
         }).error(function(response) {
             console.log(response);
-            alert('This is embarassing. An error has occured. Please check the log for details');
+            alert('Hubo un error al intentar hacer el pedido, contactese por telefono');
         });
     }
 
     $scope.registrarConsulta = function() {
-        $http.post('back/consultaForm.php', {
+        $http({method: 'POST',
+        url: API_URL+'contactUs', data:$.param({
             nombre: $scope.nombreForm,
             apellido: $scope.apellidoForm,
             email: $scope.mailForm,
             telefono: $scope.telForm,
             comment: $scope.comment,
-        }).success(function(response) {
+        }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
+            $('#myModal').modal({ show: false})
+            $('#myModal').modal('show');
             console.log(response);
             $scope.nombreForm = "";
             $scope.apellidoForm = "";
             $scope.mailForm = "";
             $scope.telForm = "";
             $scope.comment = "";
+        }).error(function(response) {
+            console.log(response);
+            // alert('This is embarassing. An error has occured. Please check the log for details');
         });
     }
 }

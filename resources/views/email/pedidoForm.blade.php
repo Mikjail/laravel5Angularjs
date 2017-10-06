@@ -891,7 +891,9 @@
 															<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
 
 																<span style="font-size:36px">Gracias por tu Compra!</span>
-
+																@if (isset($horario))
+																<p>Tu compra ha sido programada para las $horario</p>
+																@endif
 																<table class="camburTable">
 																	<thead>
 																		<th>

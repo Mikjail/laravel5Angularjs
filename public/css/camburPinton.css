@@ -41,6 +41,17 @@ a:focus {
   text-decoration: none;
   color: #cccccc;
 }
+.style-P {
+  color: #f39200;
+}
+.style-P:hover,
+.style-P:focus {
+  color: black;
+  transition: 0.8s;
+}
+.imgPromo {
+  width: 100%;
+}
 .light {
   font-weight: 400;
 }
@@ -239,7 +250,6 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   height: auto;
   padding: 40px 0;
-  background: url(../img/cream_dust.png);
 }
 .food-section .btn-delivery {
   color: black;
@@ -308,15 +318,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 16%;
   width: 17%;
 }
-@media (max-width: 960px) {
-  .food-section {
-    background-color: black;
-  }
-}
 @media (min-width: 1024px) {
   .food-section {
     height: auto;
-    background-color: white;
+    background: url(../img/cream_dust.png);
   }
 }
 .food-section ul {
@@ -343,10 +348,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .food-section .modal-body {
   color: black;
-}
-.food-section .modal-body a {
-  color: black;
-  background-color: white;
 }
 .food-section .modal-body .table {
   background-color: white;
