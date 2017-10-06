@@ -926,7 +926,7 @@
 																					<td>{{ $calle }} {{ $altura }} {{ $piso }} {{ $depto }}</td>
 																					<td>{{ $localidad }}</td>
 																					<td>Efectivo</td>	
-																					@enif
+																					@endif
 																					<td>{{ $comment }}</td>
 																				</tr>
 																			</tbody>
