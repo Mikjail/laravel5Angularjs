@@ -11,7 +11,6 @@
                     <br>
                     <p><i class="fa fa-clock-o style-P" aria-hidden="true"></i> &nbsp; Programa tu pedido!</p>
                 </div>
-                <h1>{{$scope.scheduleHour}}</h1>
                 <div class="col-md-3 form-group" ng-if="isOpen() == false">
                             <label for="inputName" class="control-label">Hora</label>
                             <select class="form-control" name="singleSelect" ng-model="scheduleHour" ng-options="i for i in ['19','20','21','22','23']"  required>

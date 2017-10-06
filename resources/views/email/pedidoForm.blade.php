@@ -905,11 +905,13 @@
 																		<th>
 																			Telefono
 																		</th>
+																		@if (isset($productoPeido))
 																		<th>Direccion</th>
 																		<th>Localidad</th>
 																		<th>
 																			Pago
 																		</th>
+																		@endif
 																		<th>
 																			Comentario
 																		</th>
@@ -920,9 +922,11 @@
 																					<td>{{ $nombre }}</td>
 																					<td>{{ $email }}</td>
 																					<td>{{ $telefono }}</td>
+																					@if (isset($productoPeido))
 																					<td>{{ $calle }} {{ $altura }} {{ $piso }} {{ $depto }}</td>
 																					<td>{{ $localidad }}</td>
 																					<td>Efectivo</td>	
+																					@enif
 																					<td>{{ $comment }}</td>
 																				</tr>
 																			</tbody>
