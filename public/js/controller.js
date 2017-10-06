@@ -111,6 +111,9 @@ function formCtrl($scope, $http, $location, API_URL) {
   
 
     $scope.registrarForm = function() {
+        if($scope.comment == '' || $scope.comment == null || $scope.comment == undefined){
+            $scope.comment="no comment";
+        }
         console.log($scope.productsBought())
         $http({method: 'POST',
             url: API_URL+'contactUs', data:$.param({
@@ -148,7 +151,9 @@ function formCtrl($scope, $http, $location, API_URL) {
     }
 
     $scope.registrarConsulta = function() {
-        $scope.comment="no comment";
+        if($scope.comment == '' || $scope.comment == null || $scope.comment == undefined){
+            $scope.comment="no comment";
+        }
         $scope.calle="consulta";
         $scope.altura="consulta";
         $scope.piso="consulta";
