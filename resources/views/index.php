@@ -23,7 +23,7 @@
     <link rel="icon" href="<?= asset('favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= asset('favicon.ico') ?>">
     <link href="<?= asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= asset('css/camburPintonv3.css') ?>" rel="stylesheet">
+    <link href="<?= asset('css/camburPintonv2.1.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,115 +32,116 @@
     <![endif]-->
 </head>
 
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-controller="productosCtrl ">
-  <!-- Navigation -->
-  <div id="fb-root"></div>
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="container">
+<!-- Navigation -->
+<div id="fb-root"></div>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
 
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                  Menu <i class="fa fa-bars"></i>
-              </button>
-              <a class="navbar-brand page-scroll" href="#page-top">
-                  <i class="fa fa-cutlery"></i>Cambur Pintón
-              </a>
-          </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-cutlery"></i>Cambur Pintón
+            </a>
+        </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-              <ul class="nav navbar-nav">
-                  <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                  <li class="hidden">`
-                      <a href="#page-top"></a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#food">Menú</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#mapSection">Mapa</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#contact">Contacto {{products.name}}</a>
-                  </li>
-                  <li>
-                      <a id="btnPedido" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
-                  </li>
-                  <li>
-                      <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
-                          <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
-                          <strong>{{totalCantidad()}}</strong>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-  </nav>
-  <!-- Intro Header -->
-  <header class="intro">
-      <div class="intro-body">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">
-                      <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
-                  </div>
-              </div>
-              <div class="row">
-                  <a href="#food" class="bntFooter page-scroll btn btn-circle">
-                      <i class="fa fa-angle-down animated"></i>
-                  </a>
-              </div>
-          </div>
-      </div>
-      </div>
-  </header>
-  <section id="nosotros" class="nosotros-section">
-  </section>
-  <!-- Download Section -->
-  <section id="food" class="food-section text-center">
-      <slide-Arepas></slide-Arepas>
-      <detalles></detalles>
-      <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div ng-view>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">`
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#food">Menú</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#mapSection">Mapa</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contacto {{products.name}}</a>
+                </li>
+                <li>
+                    <a id="btnPedido" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
+                </li>
+                <li>
+                    <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
+                        <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
+                        <strong>{{totalCantidad()}}</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">
+                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
+                </div>
+            </div>
+            <div class="row">
+                <a href="#food" class="bntFooter page-scroll btn btn-circle">
+                    <i class="fa fa-angle-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>
+<section id="nosotros" class="nosotros-section visible-md visible-lg">
+</section>
+<!-- Download Section -->
+<section id="food" class="food-section text-center">
+    <slide-Arepas></slide-Arepas>
+    <detalles></detalles>
+    <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div ng-view>
 
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  <!-- About Section -->
-  <section class="container-fluid map-section" id="mapSection">   
-          <!-- <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
-                  <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
-                      <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png" alt="">
-                  </div>
-              </div>
-          </div> -->
-      <div id="map"></div>
-     
-  </section>
+<!-- About Section -->
+<section class="container-fluid map-section" id="mapSection">   
+        <!-- <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
+                <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
+                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png" alt="">
+                </div>
+            </div>
+        </div> -->
+    <div id="map"></div>
+   
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="container-fluid content-section text-center " ng-controller="formCtrl ">
-      <contacto></contacto>
-  </section>
-  <section class="copyRight-section ">
-      <div class="container text-center ">
-          <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>                &copy; Todos los derechos reservados 2016</p>
-      </div>
-  </section>
+<!-- Contact Section -->
+<section id="contact" class="container-fluid content-section text-center " ng-controller="formCtrl ">
+    <contacto></contacto>
+</section>
+<section class="copyRight-section ">
+    <div class="container text-center ">
+        <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>                &copy; Todos los derechos reservados 2016</p>
+    </div>
+</section>
     <!-- inject:js -->
     <!-- endinject -->
     <script src="<?= asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
     <!-- Services -->
-     <script src="<?= asset('js/camburPinton.v2.2.min.js')?>"></script>
+     <script src="<?= asset('js/camburPintonv2.1.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
