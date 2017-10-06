@@ -148,6 +148,12 @@ function formCtrl($scope, $http, $location, API_URL) {
     }
 
     $scope.registrarConsulta = function() {
+        $scope.comment="no comment";
+        $scope.calle="consulta";
+        $scope.altura="consulta";
+        $scope.piso="consulta";
+        $scope.depto="consulta";
+        $scope.localidad="consulta";
         $http({method: 'POST',
         url: API_URL+'contactUs', data:$.param({
             nombre: $scope.nombreForm,
@@ -155,15 +161,26 @@ function formCtrl($scope, $http, $location, API_URL) {
             email: $scope.mailForm,
             telefono: $scope.telForm,
             comment: $scope.comment,
+            calle: $scope.calle,
+            altura: $scope.altura,
+            piso: $scope.piso,
+            depto: $scope.depto,
+            localidad: $scope.localidad
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
-            $('#myModal').modal({ show: false})
-            $('#myModal').modal('show');
+            $('#myModalComprar').modal({ show: false})
+            $('#myModalComprar').modal('show');
+            $location.path("/finalOrder");
             console.log(response);
             $scope.nombreForm = "";
             $scope.apellidoForm = "";
             $scope.mailForm = "";
             $scope.telForm = "";
             $scope.comment = "";
+            $scope.calle = "";
+            $scope.altura = "";
+            $scope.localidad = "";
+            $scope.piso = "";
+            $scope.depto = "";
         }).error(function(response) {
             console.log(response);
             // alert('This is embarassing. An error has occured. Please check the log for details');
