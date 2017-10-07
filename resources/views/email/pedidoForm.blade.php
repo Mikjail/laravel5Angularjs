@@ -889,8 +889,9 @@
 														<tr>
 
 															<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-
+																@if (isset($productoPeido))
 																<span style="font-size:36px">Gracias por tu Compra!</span>
+																@endif
 																@if (isset($horario))
 																<p>Tu compra ha sido programada para las {{ $horario }}</p>
 																@endif

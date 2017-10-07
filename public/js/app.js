@@ -1,7 +1,7 @@
 // url= "http://cambur-pinton.com/laravel5Angularjs/public/api/"
 
 var app = angular.module('starter', ['ngRoute', 'camburTemplate'])
-.constant('API_URL', 'http://cambur-pinton.com/public/api/');
+.constant('API_URL', 'https://cambur-pinton.com/public/api/');
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/detalles', {

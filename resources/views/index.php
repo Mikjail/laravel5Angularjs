@@ -20,10 +20,10 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Custom CSS -->
-    <link rel="icon" href="<?= asset('favicon.ico') ?>">
-    <link rel="shortcut icon" href="<?= asset('favicon.ico') ?>">
-    <link href="<?= asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= asset('css/camburPintonv2.5.min.css') ?>" rel="stylesheet">
+    <link rel="icon" href="<?= secure_asset('favicon.ico') ?>">
+    <link rel="shortcut icon" href="<?= secure_asset('favicon.ico') ?>">
+    <link href="<?= secure_asset('css/lib.css') ?>" rel="stylesheet">
+    <link href="<?= secure_asset('css/camburPintonv2.5.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -138,10 +138,10 @@
 </section>
     <!-- inject:js -->
     <!-- endinject -->
-    <script src="<?= asset('js/lib.min.js')?>"></script>
+    <script src="<?= secure_asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
     <!-- Services -->
-     <script src="<?= asset('js/camburPintonv2.5.js')?>"></script>
+     <script src="<?= secure_asset('js/camburPintonv2.5.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
