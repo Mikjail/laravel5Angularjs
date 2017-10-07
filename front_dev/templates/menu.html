@@ -22,7 +22,7 @@
                     <tr ng-repeat="productSelected in products" ng-if="pTypeSelected.id ===  productSelected.productstype_id">
                         <td>{{productSelected.name}}</td>
                         <td>
-                            <select style="width:10vw; margin:auto;" class="form-control" name="singleSelect" ng-model="productSelected.cant" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
+                            <select class="form-control select-custom" name="singleSelect" ng-model="productSelected.cant" ng-options="i for i in [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
                             </select>
                            
                         </td>

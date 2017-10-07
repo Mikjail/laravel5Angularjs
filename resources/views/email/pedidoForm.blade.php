@@ -892,7 +892,7 @@
 
 																<span style="font-size:36px">Gracias por tu Compra!</span>
 																@if (isset($horario))
-																<p>Tu compra ha sido programada para las $horario</p>
+																<p>Tu compra ha sido programada para las {{ $horario }}</p>
 																@endif
 																<table class="camburTable">
 																	<thead>
@@ -956,7 +956,7 @@
 																		@endforeach	
 																		<tr>	
 																			<td  colspan='3'><strong>Descuento</strong></td>
-																			<td><strong>{{ $total * 1.10 - $total }}</strong></td>
+																			<td><strong>{{ (float)$total * 1.10 - (float)$total }}</strong></td>
 																		</tr>
 																		<tr>	
 																			<td  colspan='3'><strong>TOTAL</strong></td>

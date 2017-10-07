@@ -41,6 +41,16 @@ a:focus {
   text-decoration: none;
   color: #cccccc;
 }
+.select-custom {
+  width: 10vw;
+  margin: auto;
+}
+@media (max-width: 330px) {
+  .select-custom {
+    width: 14vw;
+    margin: auto;
+  }
+}
 .style-P {
   color: #f39200;
 }
