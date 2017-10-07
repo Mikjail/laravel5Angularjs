@@ -23,7 +23,7 @@
     <link rel="icon" href="<?= secure_asset('favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= secure_asset('favicon.ico') ?>">
     <link href="<?= secure_asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= secure_asset('css/camburPintonv2.5.min.css') ?>" rel="stylesheet">
+    <link href="<?= secure_asset('css/camburPintonv2.7.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
