@@ -410,6 +410,12 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   height: 400px;
 }
+@media (max-width: 470px) {
+  .map-section #map {
+    width: 100%;
+    height: 550px;
+  }
+}
 .nosotros-section {
   background: url(../img/nosotros.png) no-repeat center center;
   /* Create the parallax scrolling effect */
