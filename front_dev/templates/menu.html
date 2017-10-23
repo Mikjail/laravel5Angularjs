@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+    <button type="button" class="close hidden-xs" data-dismiss="modal" aria-label="Close">&times;</button>
     <h2 class="modal-title" id="myModalLabel">Pedido</h2>
     <ng-container ng-repeat="type in productsType">
         <a href="#menu"  ng-click="productTypeSelected(type)" class="btnPedir btn btn-default">{{type.description}}</a>
@@ -8,7 +8,7 @@
     <a href="#menuExtra" style="border:1px solid white; color:white;" class="btn btn-default">Extras</a> -->
    <br> <span class="warning" ng-if="totalCompra() <= 149">Su pedido debe ser igual o mayor a 150$Ar</span>
 </div>
-<div class="modal-body">
+<div class="modal-body modal-body-pedido">
     <div id="menu">
         <div class="table-responsive">
             <table class="table table-hover table-condensed">
@@ -37,5 +37,7 @@
     <h1 class="text-center">{{totalCompra()| currency}} </h1>
    
     <a href="#suPedido" class="btn btn-default" style="border:1px solid black;" ng-disabled="totalCompra() <= 149">pedir</a>
-    <button type="button" class="btn btn-default" style="border:1px solid white;" data-dismiss="modal">Cerrar</button>
+
+
+    <button type="button" class="btn btn-default hidden-xs" style="border:1px solid white;" data-dismiss="modal">Cerrar</button>
 </div>

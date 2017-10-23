@@ -1,11 +1,11 @@
-productosCtrl.$inject = ['$scope', 'ProductsService', 'ProductsTypeService', '$q'];
+productosCtrl.$inject = ['$scope', 'ProductsService', 'ProductsTypeService', '$window'];
 formCtrl.$inject = ['$scope', '$http', '$location', 'API_URL']
 angular.module('starter')
     .controller("productosCtrl", productosCtrl)
     .controller("formCtrl", formCtrl);
 
-function productosCtrl($scope, ProductsService,ProductsTypeService) {
-
+function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
+    $scope.isVisible=true;
     $scope.viewArepas = "";
     $scope.detalles;
     $scope.productoPedido = {
@@ -16,6 +16,14 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
     $scope.scheduleHour='19';
     $scope.scheduleMin='00';
 
+    $scope.days= ['Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
+    var date = new Date();
+    console.log(date.getDay());
+    var day = date.getDay()-1;
+    $scope.days = $scope.days.splice(day,7-date.getDay());
+    $scope.days.unshift('Hoy');
+    $scope.scheduleDay= $scope.days[0];
+    console.log($scope.scheduleDay);
     $scope.productsType={};
     $scope.products={};
     $scope.pTypeSelected={"id": 1,
@@ -74,17 +82,17 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
           
             console.log(product.cant);
          }
-        });
         
-        $scope.addProduct= (product)=>{
+         $scope.addProduct= (product)=>{
             product.cant += 1;
-        }
+         }
 
-
+        });
     }); 
 
+    
     $scope.promo = function(){
-       return $scope.totalCompra() * 0.90;
+        return $scope.totalCompra() * 0.90;
     }
 
     $scope.isOpen = function() {
@@ -100,9 +108,11 @@ function productosCtrl($scope, ProductsService,ProductsTypeService) {
 
         return false;
     }
+    $scope.reloadPage = function(){
+        $window.location.reload();
+    }
 
     $scope.cantidadTotal = 0;
-
 
 
 }
@@ -130,7 +140,7 @@ function formCtrl($scope, $http, $location, API_URL) {
             productoPedido: $scope.productsBought(),
             productsType: $scope.productsType,
             total:$scope.promo(),
-            horario:$scope.scheduleHour +' : '+$scope.scheduleMin 
+            horario: $scope.scheduleDay + ' a las ' + $scope.scheduleHour +' : '+$scope.scheduleMin+'hs'
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
             $location.path("/finalOrder");
             $scope.nombreForm = "";

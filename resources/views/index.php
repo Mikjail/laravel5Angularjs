@@ -23,7 +23,7 @@
     <link rel="icon" href="<?= secure_asset('favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= secure_asset('favicon.ico') ?>">
     <link href="<?= secure_asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= secure_asset('css/camburPintonv2.7.min.css') ?>" rel="stylesheet">
+    <link href="<?= secure_asset('css/camburPintonv2.8.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -56,16 +56,21 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#food">Menú</a>
+                    <a class="visible-xs" href="#" ng-if="!isVisible" ng-click="reloadPage()">Home</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#mapSection">Mapa</a>
+                    <a class="page-scroll visible-md visible-lg" href="#food" >Menú</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contacto {{products.name}}</a>
+                    <a class="page-scroll" href="#mapSection" ng-if="isVisible">Mapa</a>
                 </li>
                 <li>
-                    <a id="btnPedido" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
+                    <a class="page-scroll" href="#contact" ng-if="isVisible">Contacto</a>
+                </li>
+              
+                <li>
+                    <a id="btnPedido" class="visible-sm visible-md visible-lg" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
+                    <a id="btnPedido" href="#menu" class="visible-xs" ng-click="isVisible=false">Pedir</a>
                 </li>
                 <li>
                     <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
@@ -80,7 +85,7 @@
     <!-- /.container -->
 </nav>
 <!-- Intro Header -->
-<header class="intro">
+<header class="intro" ng-if="isVisible">
     <div class="intro-body">
         <div class="container">
             <div class="row">
@@ -89,9 +94,11 @@
                 </div>
             </div>
             <div class="row">
+            
                 <a href="#food" class="bntFooter page-scroll btn btn-circle">
                     <i class="fa fa-angle-down animated"></i>
                 </a>
+                
             </div>
         </div>
     </div>
@@ -103,6 +110,9 @@
 <section id="food" class="food-section text-center">
     <slide-Arepas></slide-Arepas>
     <detalles></detalles>
+    <div class="col-md-offset-5 col-md-2 text-center visible-xs">
+            <a class="btn btn-default-pedir" href="#menu" ng-click="isVisible=false"><span style="color: white">Pedir</span></a>
+        </div>
     <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -113,9 +123,13 @@
         </div>
     </div>
 </section>
-
+<section id="menuMobile" class="visible-xs">
+    <div ng-view>
+        
+     </div>
+</section>
 <!-- About Section -->
-<section class="container-fluid map-section" id="mapSection">   
+<section class="container-fluid map-section" id="mapSection" ng-if="isVisible">   
         <!-- <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
                 <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
@@ -128,7 +142,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="container-fluid content-section text-center " ng-controller="formCtrl ">
+<section id="contact" class="container-fluid content-section text-center " ng-controller="formCtrl" ng-if="isVisible">
     <contacto></contacto>
 </section>
 <section class="copyRight-section ">
@@ -141,7 +155,7 @@
     <script src="<?= secure_asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
     <!-- Services -->
-     <script src="<?= secure_asset('js/camburPintonv2.5.js')?>"></script>
+     <script src="<?= secure_asset('js/camburPintonv2.8.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

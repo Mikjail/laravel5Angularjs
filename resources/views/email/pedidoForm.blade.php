@@ -14,7 +14,6 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>*|MC:SUBJECT|*</title>
 
 	<style type="text/css">
 		p {
@@ -128,7 +127,7 @@
 		}
 
 		.templateContainer {
-			max-width: 600px !important;
+			min-width: 800px !important;
 		}
 
 		a.mcnButton {
@@ -798,8 +797,8 @@
 		}
 
 		.camburTable,
-		camburTable th,
-		camburTable td {
+		.camburTable th,
+		.camburTable td {
 			border: 1px solid black;
 		}
 
@@ -825,10 +824,7 @@
 </head>
 
 <body>
-	<!--*|IF:MC_PREVIEW_TEXT|*-->
-	<!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span>
-	<!--<![endif]-->
-	<!--*|END:IF|*-->
+
 	<center>
 		<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
 			<tr>
@@ -889,11 +885,11 @@
 														<tr>
 
 															<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-																@if (isset($productoPeido))
+																@if (isset($productoPedido))
 																<span style="font-size:36px">Gracias por tu Compra!</span>
 																@endif
 																@if (isset($horario))
-																<p>Tu compra ha sido programada para las {{ $horario }}</p>
+																<p>Tu compra ha sido programada = {{ $horario }}!</p>
 																@endif
 																<table class="camburTable">
 																	<thead>
@@ -906,7 +902,7 @@
 																		<th>
 																			Telefono
 																		</th>
-																		@if (isset($productoPeido))
+																		@if (isset($productoPedido))
 																		<th>Direccion</th>
 																		<th>Localidad</th>
 																		<th>
@@ -923,7 +919,7 @@
 																					<td>{{ $nombre }}</td>
 																					<td>{{ $email }}</td>
 																					<td>{{ $telefono }}</td>
-																					@if (isset($productoPeido))
+																					@if (isset($productoPedido))
 																					<td>{{ $calle }} {{ $altura }} {{ $piso }} {{ $depto }}</td>
 																					<td>{{ $localidad }}</td>
 																					<td>Efectivo</td>	
@@ -933,7 +929,7 @@
 																			</tbody>
 																</table>
 																<br>
-																@if (isset($productoPeido))
+																@if (isset($productoPedido))
 																<table class="camburTable">
 																	<thead>
 																		<th>Producto</th>
@@ -957,7 +953,7 @@
 																		@endforeach	
 																		<tr>	
 																			<td  colspan='3'><strong>Descuento</strong></td>
-																			<td><strong>{{ (float)$total * 1.10 - (float)$total }}</strong></td>
+																			<td><strong>%10</strong></td>
 																		</tr>
 																		<tr>	
 																			<td  colspan='3'><strong>TOTAL</strong></td>

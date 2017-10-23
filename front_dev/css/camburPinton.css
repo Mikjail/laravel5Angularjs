@@ -259,61 +259,85 @@ input[type=number]::-webkit-outer-spin-button {
 .content-section .btn-default {
   color: black;
 }
-.food-section {
+.food-section,
+#menuMobile {
   width: 100%;
   height: auto;
   padding: 40px 0;
 }
-.food-section .btn-delivery {
+.food-section .btn-delivery,
+#menuMobile .btn-delivery {
   color: black;
   transition: 0.6s;
 }
-.food-section .btn-delivery:hover {
+.food-section .btn-delivery:hover,
+#menuMobile .btn-delivery:hover {
   color: #f39200;
   transition: 0.6s;
 }
-.food-section .warning {
+.food-section .warning,
+#menuMobile .warning {
   color: #f39200;
   font-size: 14px;
 }
 .food-section .panel-middle img,
+#menuMobile .panel-middle img,
 .food-section .panel-left img,
-.food-section .panel-right img {
+#menuMobile .panel-left img,
+.food-section .panel-right img,
+#menuMobile .panel-right img {
   transition: 0.5s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .food-section .panel-middle img:hover,
+#menuMobile .panel-middle img:hover,
 .food-section .panel-left img:hover,
-.food-section .panel-right img:hover {
+#menuMobile .panel-left img:hover,
+.food-section .panel-right img:hover,
+#menuMobile .panel-right img:hover {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
   transition: 0.5s;
 }
-.food-section .btn-default-pedir {
+.food-section .btn-default-pedir,
+#menuMobile .btn-default-pedir {
   background-color: black;
 }
-.food-section .panel-middle {
+.food-section .panel-middle,
+#menuMobile .panel-middle {
   margin-top: 10%;
 }
 .food-section .panel-left img,
+#menuMobile .panel-left img,
 .food-section .panel-right img,
-.food-section .panel-middle img {
+#menuMobile .panel-right img,
+.food-section .panel-middle img,
+#menuMobile .panel-middle img {
   width: 80%;
 }
 .food-section .panel-left a,
+#menuMobile .panel-left a,
 .food-section .panel-right a,
-.food-section .panel-middle a {
+#menuMobile .panel-right a,
+.food-section .panel-middle a,
+#menuMobile .panel-middle a {
   padding: 0;
 }
 .food-section .panel-left a:hover,
+#menuMobile .panel-left a:hover,
 .food-section .panel-right a:hover,
-.food-section .panel-middle a:hover {
+#menuMobile .panel-right a:hover,
+.food-section .panel-middle a:hover,
+#menuMobile .panel-middle a:hover {
   transition: 0.5s;
   color: black;
 }
 .food-section .panel-left a:hover .btn-pedir-img,
+#menuMobile .panel-left a:hover .btn-pedir-img,
 .food-section .panel-right a:hover .btn-pedir-img,
-.food-section .panel-middle a:hover .btn-pedir-img {
+#menuMobile .panel-right a:hover .btn-pedir-img,
+.food-section .panel-middle a:hover .btn-pedir-img,
+#menuMobile .panel-middle a:hover .btn-pedir-img {
   opacity: 1;
   color: white;
   position: relative;
@@ -321,8 +345,11 @@ input[type=number]::-webkit-outer-spin-button {
   transition: 0.5s;
 }
 .food-section .panel-left .btn-pedir-img,
+#menuMobile .panel-left .btn-pedir-img,
 .food-section .panel-right .btn-pedir-img,
-.food-section .panel-middle .btn-pedir-img {
+#menuMobile .panel-right .btn-pedir-img,
+.food-section .panel-middle .btn-pedir-img,
+#menuMobile .panel-middle .btn-pedir-img {
   position: relative;
   opacity: 0;
   color: white;
@@ -332,56 +359,71 @@ input[type=number]::-webkit-outer-spin-button {
   width: 17%;
 }
 @media (min-width: 1024px) {
-  .food-section {
+  .food-section,
+  #menuMobile {
     height: auto;
     background: url(../img/cream_dust.png);
   }
 }
-.food-section ul {
+.food-section ul,
+#menuMobile ul {
   list-style-type: none;
   padding: 0;
 }
-.food-section .modal-header {
+.food-section .modal-header,
+#menuMobile .modal-header {
   background-color: white;
   color: black;
   font-family: "Arial", "sans-serif";
 }
-.food-section .modal-header .btnPedir {
+.food-section .modal-header .btnPedir,
+#menuMobile .modal-header .btnPedir {
   border: 1px solid black;
   color: black;
   margin-top: 5px;
 }
 .food-section .modal-header .btnPedir:hover,
+#menuMobile .modal-header .btnPedir:hover,
 .food-section .modal-header .btnPedir:active,
-.food-section .modal-header .btnPedir:focus {
+#menuMobile .modal-header .btnPedir:active,
+.food-section .modal-header .btnPedir:focus,
+#menuMobile .modal-header .btnPedir:focus {
   background-color: #f39200;
 }
-.food-section .modal-header a {
+.food-section .modal-header a,
+#menuMobile .modal-header a {
   background-color: white;
 }
-.food-section .modal-body {
+.food-section .modal-body,
+#menuMobile .modal-body {
   color: black;
 }
-.food-section .modal-body .table {
+.food-section .modal-body .table,
+#menuMobile .modal-body .table {
   background-color: white;
   color: black;
 }
-.food-section .modal-body .table p {
+.food-section .modal-body .table p,
+#menuMobile .modal-body .table p {
   font-size: 12px;
 }
-.food-section .modal-body .table thead th {
+.food-section .modal-body .table thead th,
+#menuMobile .modal-body .table thead th {
   font-family: "Arial", "sans-serif";
   vertical-align: text-top;
 }
-.food-section .modal-footer {
+.food-section .modal-footer,
+#menuMobile .modal-footer {
   background-color: white;
   color: black;
 }
-.food-section .modal-footer a {
+.food-section .modal-footer a,
+#menuMobile .modal-footer a {
   color: white;
   background-color: black;
 }
-.food-section .modal-footer button {
+.food-section .modal-footer button,
+#menuMobile .modal-footer button {
   color: white;
   background-color: grey;
 }
@@ -504,4 +546,24 @@ img::selection {
 }
 img::-moz-selection {
   background: transparent;
+}
+#menuMobile {
+  text-align: center;
+}
+#menuMobile .modal-body {
+  background-color: white;
+}
+#menuMobile .modal-body-pedido {
+  height: 400px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }

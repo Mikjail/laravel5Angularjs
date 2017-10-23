@@ -40,7 +40,7 @@ class ContactUsController extends Controller
             Mail::send('email.pedidoForm', $data , function($message) use ($nombre, $email, $recipient, $horario){   
             $message->from("info@cambur-pinton.com", "Cambur Pintón");
                 if($horario != '' && isset($horario)){
-                    $message->to($recipient['email'], $recipient['name'])->subject('Pedido programado para las '. $horario .'!');
+                    $message->to($recipient['email'], $recipient['name'])->subject('Pedido programado = '. $horario);
                 }
                 else{
                     $message->to($recipient['email'], $recipient['name'])->subject('Contacto Cambur Pinton');
