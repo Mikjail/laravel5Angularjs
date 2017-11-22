@@ -21,7 +21,9 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
     console.log(date.getDay());
     var day = date.getDay()-1;
     $scope.days = $scope.days.splice(day,7-date.getDay());
-    $scope.days.unshift('Hoy');
+    if(day != 0){
+        $scope.days.unshift('Hoy');
+    }
     $scope.scheduleDay= $scope.days[0];
     console.log($scope.scheduleDay);
     $scope.productsType={};
@@ -86,16 +88,12 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
          $scope.addProduct= (product)=>{
             product.cant += 1;
          }
+        
+         $scope.promo = () =>{
+            return $scope.totalCompra() * 0.90;
+        }
 
-        });
-    }); 
-
-    
-    $scope.promo = function(){
-        return $scope.totalCompra() * 0.90;
-    }
-
-    $scope.isOpen = function() {
+    $scope.isOpen = () => {
         var date = new Date();
         var day = date.getDay();
         var hour = date.getHours();
@@ -108,12 +106,29 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
 
         return false;
     }
-    $scope.reloadPage = function(){
+
+    $scope.reloadPage = () =>{
         $window.location.reload();
     }
 
+    $scope.orderNow = () =>{
+        $scope.isVisible = false;
+        setTimeout(()=>{
+            $('html, body').animate({
+                scrollTop: $("#menuMobile").offset().top
+            }, 2000);
+        },500)
+        
+    }
     $scope.cantidadTotal = 0;
 
+
+        });
+      
+    
+    }); 
+
+    
 
 }
 
@@ -164,6 +179,9 @@ function formCtrl($scope, $http, $location, API_URL) {
         if($scope.comment == '' || $scope.comment == null || $scope.comment == undefined){
             $scope.comment="no comment";
         }
+        $scope.apellidoForm="consulta";
+        $scope.nombreForm="consulta";
+        $scope.telForm="consulta";
         $scope.calle="consulta";
         $scope.altura="consulta";
         $scope.piso="consulta";
@@ -182,8 +200,7 @@ function formCtrl($scope, $http, $location, API_URL) {
             depto: $scope.depto,
             localidad: $scope.localidad
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
-            $('#myModalComprar').modal({ show: false})
-            $('#myModalComprar').modal('show');
+            $('#anotherModal').modal('show');
             $location.path("/finalOrder");
             console.log(response);
             $scope.nombreForm = "";

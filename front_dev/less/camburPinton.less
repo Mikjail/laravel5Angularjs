@@ -5,7 +5,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: "Helvetica light","Arial","sans-serif";
-    background: url(../img/retina_wood.png);
+    background: black;
   }
 
 html {
@@ -19,23 +19,14 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 10px;
     text-transform: uppercase;
     font-family: "Arial","sans-serif";
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-p {
-    margin: 0 0 25px;
-    font-size: 18px;
-    line-height: 1.5;
-    @media(min-width:768px) {
-        margin: 0 0 35px;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-}
+
 
 a { 
     color: @primary;
@@ -163,7 +154,7 @@ a {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background: url(../img/background.jpg) no-repeat center center;
+    background: url(../img/backgroundHomePC.png) no-repeat center center;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -190,6 +181,12 @@ a {
     }
     .bntFooter{
         margin-bottom: -22%;
+    }
+    .imgCambur{
+        margin-top:30%;
+        @media (max-width:470px){
+            margin-top: -77%;
+        }
     }
 }
 
@@ -300,86 +297,122 @@ input[type=number]::-webkit-outer-spin-button {
 
 .content-section {
     height: auto;
+    .social-btn{
+        color:white;
+        &:hover{
+            color:@home;
+        }
+    }
+    .contact-info{
+        margin-top: 70px;
+        p{
+            color: @colorText;
+            font-size: 15px;
+            line-height: 0px;
+            margin:0 0 40px
+        }
+        .subtitle{
+            margin-left:30px;
+        }
+    }
+   
+    .colorDeliveryFree{
+        height: 10px;
+        width: 10px;
+        background-color: #697069;
+        float:left;
+        margin-right: 5px
+    }
+    #map{
+        width: 100%;
+        height: 485px;
+        @media (max-width:470px){
+         width: 100%;
+         height: 550px;
+        }
+    }
     h1,h2,h3,h4,h5{
-            color: black;
+            color: white;
         }
     .contactForm{
         text-align: left;
         label{
-            color:black;
+            color:white;
         }
     } 
     .btn-default{
-        color:black;
+        color: white;
+    }
+    a{
+        color: white;
     }
 }
 .food-section, #menuMobile{
-    
-    .btn-delivery{
-        color:black;
-        transition:0.6s;
+ 
+    width: 100%;
+    height: auto;
+    padding: 200px 0px;
+    .margin-scale{
+        margin-top:2%;
+        transition: 0.5s;
         &:hover{
-            color:@home;
-            transition: 0.6s;
+            transition: 0.5s;
+            margin-top: -6%
         }
     }
+    .margin-no-scale{
+        margin-top:0%;
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            margin-top: -4%;
+        }
+    }
+
+    .foodImgPpal{
+      .foodSprite(url('../img/TequeArepasEmpanadasPatacones.png'));
+    } 
+    .foodImgSecond{
+        .foodSprite(url('../img/QuesillosArepasQuesos.png'));
+      } 
+
+    .tequenos{
+        .foodPosition(0%);
+        @media(max-width:900px) {
+            .foodPosition(4%);
+        }
+    }
+    .arepas{
+        .foodPosition(33%);
+        @media(max-width:900px) {
+            .foodPosition(35%);
+        }
+    }
+    .empanadas{
+        .foodPosition(67%);
+        @media(max-width:900px) {
+            .foodPosition(65%);
+        }
+    }
+    .patacones{
+        .foodPosition(100%);
+        @media(max-width:900px) {
+            .foodPosition(95%);
+        }
+    }
+    
+    .another-section{
+        padding: 200px 0px;
+    }
+  
     .warning{
         color:@home;
         font-size: 14px;
     }
-    width: 100%;
-    height: auto;
-    padding: 40px 0;
-    .panel-middle,  .panel-left, .panel-right{
-        img{
-            transition: 0.5s;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            &:hover{
-                transform: scale(0.98);
-                transition: 0.5s;
-            } 
-        }
-    }
-    .btn-default-pedir{
-        background-color: black;
-    }
-    .panel-middle{
-        margin-top: 10%;
-    }
-    .panel-left, .panel-right,.panel-middle{
-        img{
-            width: 80%;
-        }
-        a{
-            padding:0;
-            &:hover{
-                transition: 0.5s;
-                color:black;
-                .btn-pedir-img{
-                    opacity:1;
-                    color:white;
-                    position:relative;
-                   // opacity: 0;
-                   margin-top: -20%;
-                   // margin-bottom: 13%;
-                   transition: 0.5s;
-                }
-            }
-        }
-        .btn-pedir-img{
-            position: relative;
-            opacity: 0;
-            color: white;
-            margin-top: -20%;
-            margin-bottom: 13%;
-            margin-left: 16%;
-            width: 17%;
-        }
-    }
-  
+   
     @media(min-width:1024px) {
     height:auto;
-    background: url(../img/cream_dust.png);
+    background: black
     }
     ul{
           list-style-type: none;
@@ -452,15 +485,6 @@ input[type=number]::-webkit-outer-spin-button {
            font-size: 20px;
        }
    }
-    #map{
-       width: 100%;
-       height: 400px;
-       @media (max-width:470px){
-        width: 100%;
-        height: 550px;
-       }
-   }
-  
 }
 
   
@@ -471,6 +495,8 @@ input[type=number]::-webkit-outer-spin-button {
     height: 300px;
     color:white;
     text-align: center;
+ 
+   
     #parrafo{
         p{
             font-size: 18px;
@@ -487,7 +513,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 80px;
+        padding-top: 55px;
     }
 }
 
@@ -535,6 +561,7 @@ footer {
     padding: 50px 0;
     p {
         margin: 0;
+        color:@colorText;
     }
 }
 
@@ -558,9 +585,14 @@ img::-moz-selection {
     background: transparent;
 }
 
+.copyRight-section{
+    height:0px
+}
+
 // //MENU MOBILE SECTION
 #menuMobile{
     text-align: center;
+    padding: 30px 0px 100px 0px;
     .modal-body{
         background-color: white;
     }

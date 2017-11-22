@@ -7,10 +7,11 @@
     <div class="col-md-12">
         <form id="formPedido" data-toggle="validator" ng-submit="registrarForm();" role="form">
             <div class="col-md-12">
-                <div class="col-md-6" ng-if="isOpen() == false">
+                <div class="col-md-12" ng-if="isOpen() == false">
                     <br>
                     <p><i class="fa fa-clock-o style-P" aria-hidden="true"></i> &nbsp; Programa tu pedido!</p>
                 </div>
+                <br>
                 <div class="col-md-3 form-group" ng-if="isOpen() == false">
                     <label for="inputName" class="control-label">Día</label>
                     <select class="form-control" name="singleSelect" ng-model="scheduleDay" ng-options="days for days in days"  required>
@@ -20,8 +21,7 @@
                             <label for="inputName" class="control-label">Hora</label>
                             <select class="form-control" name="singleSelect" ng-model="scheduleHour" ng-options="i for i in ['19','20','21','22','23']"  required>
                             </select>
-                               
-                            <div class="help-block with-errors">19 a 23:30</div>
+                            <div class="help-block with-errors">19 a 23:45</div>
                 </div>
                 <div class="col-md-3 form-group" ng-if="isOpen() == false">
                         <label for="inputName" class="control-label">Min</label>

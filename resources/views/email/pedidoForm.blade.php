@@ -894,15 +894,15 @@
 																<table class="camburTable">
 																	<thead>
 																		<th>
-																			Nombre
-																		</th>
-																		<th>
 																			Mail
+																		</th>
+																		@if (isset($productoPedido))
+																		<th>
+																			Nombre
 																		</th>
 																		<th>
 																			Telefono
 																		</th>
-																		@if (isset($productoPedido))
 																		<th>Direccion</th>
 																		<th>Localidad</th>
 																		<th>
@@ -915,11 +915,10 @@
 																		<thead>
 																			<tbody>
 																				<tr>
-																				
-																					<td>{{ $nombre }}</td>
 																					<td>{{ $email }}</td>
-																					<td>{{ $telefono }}</td>
 																					@if (isset($productoPedido))
+																					<td>{{ $nombre }}</td>
+																					<td>{{ $telefono }}</td>
 																					<td>{{ $calle }} {{ $altura }} {{ $piso }} {{ $depto }}</td>
 																					<td>{{ $localidad }}</td>
 																					<td>Efectivo</td>	
