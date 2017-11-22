@@ -10,6 +10,12 @@ app.directive("menu", function() {
         templateUrl: "templates/menu.html"
     }
 });
+app.directive("menuMobile", function() {
+    return {
+        restrict: "E",
+        templateUrl: "templates/menu.html"
+    }
+});
 app.directive("detalles", function() {
     return {
         restrict: "E",

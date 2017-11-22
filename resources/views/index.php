@@ -23,7 +23,7 @@
     <link rel="icon" href="<?= secure_asset('favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= secure_asset('favicon.ico') ?>">
     <link href="<?= secure_asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= secure_asset('css/camburPintonv2.8.min.css') ?>" rel="stylesheet">
+    <link href="<?= secure_asset('css/camburPintonv3.0.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -56,13 +56,10 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="visible-xs" href="#" ng-if="!isVisible" ng-click="reloadPage()">Home</a>
-                </li>
+                        <a class="visible-xs" href="#" ng-if="!isVisible" ng-click="isVisible=true; reloadPage()">Home</a>
+                    </li>
                 <li>
                     <a class="page-scroll visible-md visible-lg" href="#food" >Menú</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#mapSection" ng-if="isVisible">Mapa</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#contact" ng-if="isVisible">Contacto</a>
@@ -70,7 +67,7 @@
               
                 <li>
                     <a id="btnPedido" class="visible-sm visible-md visible-lg" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
-                    <a id="btnPedido" href="#menu" class="visible-xs" ng-click="isVisible=false">Pedir</a>
+                    <a  id="btnPedido" href="#menu" class="visible-xs" ng-click="orderNow()">Pedir</a>
                 </li>
                 <li>
                     <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
@@ -89,16 +86,16 @@
     <div class="intro-body">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8">
+                <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-offset-3 col-xs-6">
                     <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
                 </div>
             </div>
             <div class="row">
             
-                <a href="#food" class="bntFooter page-scroll btn btn-circle">
+                <!-- <a href="#food" class="bntFooter page-scroll btn btn-circle">
                     <i class="fa fa-angle-down animated"></i>
                 </a>
-                
+                 -->
             </div>
         </div>
     </div>
@@ -107,7 +104,7 @@
 <section id="nosotros" class="nosotros-section visible-md visible-lg">
 </section>
 <!-- Download Section -->
-<section id="food" class="food-section text-center">
+<section id="food" class="food-section text-center visible-md visible-lg">
     <slide-Arepas></slide-Arepas>
     <detalles></detalles>
     <div class="col-md-offset-5 col-md-2 text-center visible-xs">
@@ -123,39 +120,35 @@
         </div>
     </div>
 </section>
-<section id="menuMobile" class="visible-xs">
+<section id="menuMobile" class="visible-xs" ng-if="!isVisible">
     <div ng-view>
         
      </div>
 </section>
 <!-- About Section -->
-<section class="container-fluid map-section" id="mapSection" ng-if="isVisible">   
-        <!-- <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 textLogo text-center">
-                <div class="col-md-2 col-md-offset-5 col-sm-2 col-xs-4 col-xs-offset-4">
-                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png" alt="">
-                </div>
-            </div>
-        </div> -->
-    <div id="map"></div>
-   
-</section>
-
 <!-- Contact Section -->
-<section id="contact" class="container-fluid content-section text-center " ng-controller="formCtrl" ng-if="isVisible">
+<section id="contact" class="content-section" ng-controller="formCtrl">
     <contacto></contacto>
 </section>
-<section class="copyRight-section ">
-    <div class="container text-center ">
-        <p style="color: white;"><a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>                &copy; Todos los derechos reservados 2016</p>
-    </div>
+<section class="copyRight-section">
+        <a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>
+        <span style="color: rgb(243, 236, 236);"> &copy; Todos los derechos reservados 2016</span>
 </section>
+<div class="modal fade" id="anotherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div ng-view>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- inject:js -->
     <!-- endinject -->
     <script src="<?= secure_asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
     <!-- Services -->
-     <script src="<?= secure_asset('js/camburPintonv2.8.js')?>"></script>
+     <script src="<?= secure_asset('js/camburPintonv3.0.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

@@ -2,7 +2,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Helvetica light", "Arial", "sans-serif";
-  background: url(../img/retina_wood.png);
+  background: black;
 }
 html {
   width: 100%;
@@ -14,23 +14,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 35px;
+  margin: 0 0 10px;
   text-transform: uppercase;
   font-family: "Arial", "sans-serif";
   font-weight: 700;
   letter-spacing: 1px;
-}
-p {
-  margin: 0 0 25px;
-  font-size: 18px;
-  line-height: 1.5;
-}
-@media (min-width: 768px) {
-  p {
-    margin: 0 0 35px;
-    font-size: 20px;
-    line-height: 1.6;
-  }
 }
 a {
   color: white;
@@ -140,7 +128,7 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url(../img/background.jpg) no-repeat center center;
+  background: url(../img/backgroundHomePC.png) no-repeat center center;
   background-size: cover;
   background-color: black;
 }
@@ -165,6 +153,14 @@ a:focus {
 }
 .intro .bntFooter {
   margin-bottom: -22%;
+}
+.intro .imgCambur {
+  margin-top: 30%;
+}
+@media (max-width: 470px) {
+  .intro .imgCambur {
+    margin-top: -77%;
+  }
 }
 .btn-circle {
   width: 45px;
@@ -243,126 +239,156 @@ input[type=number]::-webkit-outer-spin-button {
 .content-section {
   height: auto;
 }
+.content-section .social-btn {
+  color: white;
+}
+.content-section .social-btn:hover {
+  color: #f39200;
+}
+.content-section .contact-info {
+  margin-top: 70px;
+}
+.content-section .contact-info p {
+  color: #f3ecec;
+  font-size: 15px;
+  line-height: 0px;
+  margin: 0 0 40px;
+}
+.content-section .contact-info .subtitle {
+  margin-left: 30px;
+}
+.content-section .colorDeliveryFree {
+  height: 10px;
+  width: 10px;
+  background-color: #697069;
+  float: left;
+  margin-right: 5px;
+}
+.content-section #map {
+  width: 100%;
+  height: 485px;
+}
+@media (max-width: 470px) {
+  .content-section #map {
+    width: 100%;
+    height: 550px;
+  }
+}
 .content-section h1,
 .content-section h2,
 .content-section h3,
 .content-section h4,
 .content-section h5 {
-  color: black;
+  color: white;
 }
 .content-section .contactForm {
   text-align: left;
 }
 .content-section .contactForm label {
-  color: black;
+  color: white;
 }
 .content-section .btn-default {
-  color: black;
+  color: white;
+}
+.content-section a {
+  color: white;
 }
 .food-section,
 #menuMobile {
   width: 100%;
   height: auto;
-  padding: 40px 0;
+  padding: 200px 0px;
 }
-.food-section .btn-delivery,
-#menuMobile .btn-delivery {
-  color: black;
-  transition: 0.6s;
+.food-section .margin-scale,
+#menuMobile .margin-scale {
+  margin-top: 2%;
+  transition: 0.5s;
 }
-.food-section .btn-delivery:hover,
-#menuMobile .btn-delivery:hover {
-  color: #f39200;
-  transition: 0.6s;
+.food-section .margin-scale:hover,
+#menuMobile .margin-scale:hover {
+  transition: 0.5s;
+  margin-top: -6%;
+}
+.food-section .margin-no-scale,
+#menuMobile .margin-no-scale {
+  margin-top: 0%;
+  transition: 0.5s;
+}
+.food-section .margin-no-scale:hover,
+#menuMobile .margin-no-scale:hover {
+  transition: 0.5s;
+  margin-top: -4%;
+}
+.food-section .foodImgPpal,
+#menuMobile .foodImgPpal {
+  height: 570px;
+  width: 21%;
+  background: url('../img/TequeArepasEmpanadasPatacones.png');
+  margin-left: 3%;
+  background-size: 1000px;
+}
+.food-section .foodImgSecond,
+#menuMobile .foodImgSecond {
+  height: 570px;
+  width: 21%;
+  background: url('../img/QuesillosArepasQuesos.png');
+  margin-left: 3%;
+  background-size: 1000px;
+}
+.food-section .tequenos,
+#menuMobile .tequenos {
+  background-position-x: 0%;
+}
+@media (max-width: 900px) {
+  .food-section .tequenos,
+  #menuMobile .tequenos {
+    background-position-x: 4%;
+  }
+}
+.food-section .arepas,
+#menuMobile .arepas {
+  background-position-x: 33%;
+}
+@media (max-width: 900px) {
+  .food-section .arepas,
+  #menuMobile .arepas {
+    background-position-x: 35%;
+  }
+}
+.food-section .empanadas,
+#menuMobile .empanadas {
+  background-position-x: 67%;
+}
+@media (max-width: 900px) {
+  .food-section .empanadas,
+  #menuMobile .empanadas {
+    background-position-x: 65%;
+  }
+}
+.food-section .patacones,
+#menuMobile .patacones {
+  background-position-x: 100%;
+}
+@media (max-width: 900px) {
+  .food-section .patacones,
+  #menuMobile .patacones {
+    background-position-x: 95%;
+  }
+}
+.food-section .another-section,
+#menuMobile .another-section {
+  padding: 200px 0px;
 }
 .food-section .warning,
 #menuMobile .warning {
   color: #f39200;
   font-size: 14px;
 }
-.food-section .panel-middle img,
-#menuMobile .panel-middle img,
-.food-section .panel-left img,
-#menuMobile .panel-left img,
-.food-section .panel-right img,
-#menuMobile .panel-right img {
-  transition: 0.5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.food-section .panel-middle img:hover,
-#menuMobile .panel-middle img:hover,
-.food-section .panel-left img:hover,
-#menuMobile .panel-left img:hover,
-.food-section .panel-right img:hover,
-#menuMobile .panel-right img:hover {
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-  transition: 0.5s;
-}
-.food-section .btn-default-pedir,
-#menuMobile .btn-default-pedir {
-  background-color: black;
-}
-.food-section .panel-middle,
-#menuMobile .panel-middle {
-  margin-top: 10%;
-}
-.food-section .panel-left img,
-#menuMobile .panel-left img,
-.food-section .panel-right img,
-#menuMobile .panel-right img,
-.food-section .panel-middle img,
-#menuMobile .panel-middle img {
-  width: 80%;
-}
-.food-section .panel-left a,
-#menuMobile .panel-left a,
-.food-section .panel-right a,
-#menuMobile .panel-right a,
-.food-section .panel-middle a,
-#menuMobile .panel-middle a {
-  padding: 0;
-}
-.food-section .panel-left a:hover,
-#menuMobile .panel-left a:hover,
-.food-section .panel-right a:hover,
-#menuMobile .panel-right a:hover,
-.food-section .panel-middle a:hover,
-#menuMobile .panel-middle a:hover {
-  transition: 0.5s;
-  color: black;
-}
-.food-section .panel-left a:hover .btn-pedir-img,
-#menuMobile .panel-left a:hover .btn-pedir-img,
-.food-section .panel-right a:hover .btn-pedir-img,
-#menuMobile .panel-right a:hover .btn-pedir-img,
-.food-section .panel-middle a:hover .btn-pedir-img,
-#menuMobile .panel-middle a:hover .btn-pedir-img {
-  opacity: 1;
-  color: white;
-  position: relative;
-  margin-top: -20%;
-  transition: 0.5s;
-}
-.food-section .panel-left .btn-pedir-img,
-#menuMobile .panel-left .btn-pedir-img,
-.food-section .panel-right .btn-pedir-img,
-#menuMobile .panel-right .btn-pedir-img,
-.food-section .panel-middle .btn-pedir-img,
-#menuMobile .panel-middle .btn-pedir-img {
-  position: relative;
-  opacity: 0;
-  color: white;
-  margin-top: -20%;
-  margin-bottom: 13%;
-  margin-left: 16%;
-  width: 17%;
-}
 @media (min-width: 1024px) {
   .food-section,
   #menuMobile {
     height: auto;
-    background: url(../img/cream_dust.png);
+    background: black;
   }
 }
 .food-section ul,
@@ -451,16 +477,6 @@ input[type=number]::-webkit-outer-spin-button {
 .map-section .textMap p {
   font-size: 20px;
 }
-.map-section #map {
-  width: 100%;
-  height: 400px;
-}
-@media (max-width: 470px) {
-  .map-section #map {
-    width: 100%;
-    height: 550px;
-  }
-}
 .nosotros-section {
   background: url(../img/nosotros.png) no-repeat center center;
   /* Create the parallax scrolling effect */
@@ -482,7 +498,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media (min-width: 767px) {
   .content-section {
-    padding-top: 80px;
+    padding-top: 55px;
   }
 }
 .btn {
@@ -527,6 +543,7 @@ footer {
 }
 footer p {
   margin: 0;
+  color: #f3ecec;
 }
 ::-moz-selection {
   text-shadow: none;
@@ -547,8 +564,12 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+.copyRight-section {
+  height: 0px;
+}
 #menuMobile {
   text-align: center;
+  padding: 30px 0px 100px 0px;
 }
 #menuMobile .modal-body {
   background-color: white;
