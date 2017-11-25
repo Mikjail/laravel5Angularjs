@@ -34,115 +34,115 @@
 
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-controller="productosCtrl ">
-<!-- Navigation -->
-<div id="fb-root"></div>
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
+  <!-- Navigation -->
+  <div id="fb-root"></div>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-cutlery"></i>Cambur Pintón
-            </a>
-        </div>
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                  Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">
+                  <i class="fa fa-cutlery"></i>Cambur Pintón
+              </a>
+          </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                <li class="hidden">`
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                        <a class="visible-xs" href="#" ng-if="!isVisible" ng-click="isVisible=true; reloadPage()">Home</a>
-                    </li>
-                <li>
-                    <a class="page-scroll visible-md visible-lg" href="#food" >Menú</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact" ng-if="isVisible">Contacto</a>
-                </li>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+              <ul class="nav navbar-nav">
+                  <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                  <li class="hidden">`
+                      <a href="#page-top"></a>
+                  </li>
+                  <li>
+                          <a class="visible-xs" href="#" ng-if="!isVisible" ng-click="isVisible=true; reloadPage()">Home</a>
+                      </li>
+                  <li>
+                      <a class="page-scroll visible-sm visible-md visible-lg" href="#food" >Menú</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#contact" ng-if="isVisible">Contacto</a>
+                  </li>
+                
+                  <li>
+                      <a id="btnPedido" class="visible-sm visible-md visible-lg" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
+                      <a  id="btnPedido" href="#menu" class="visible-xs" ng-click="orderNow()">Pedir</a>
+                  </li>
+                  <li>
+                      <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
+                          <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
+                          <strong>{{totalCantidad()}}</strong>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+  </nav>
+  <!-- Intro Header -->
+  <header class="intro" ng-if="isVisible">
+      <div class="intro-body">
+          <div class="container">
+              <div class="row">
+                  <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-offset-3 col-xs-6">
+                      <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
+                  </div>
+              </div>
+              <div class="row">
               
-                <li>
-                    <a id="btnPedido" class="visible-sm visible-md visible-lg" href="#menu" data-toggle="modal" data-target="#myModalComprar">Pedir</a>
-                    <a  id="btnPedido" href="#menu" class="visible-xs" ng-click="orderNow()">Pedir</a>
-                </li>
-                <li>
-                    <a href="#suPedido" data-toggle="modal" data-target="#myModalComprar">
-                        <img style="margin-top: -9px;" src="img/icon/cart/btnCartNegro.png" alt="">
-                        <strong>{{totalCantidad()}}</strong>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<!-- Intro Header -->
-<header class="intro" ng-if="isVisible">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-offset-3 col-xs-6">
-                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
-                </div>
-            </div>
-            <div class="row">
-            
-                <!-- <a href="#food" class="bntFooter page-scroll btn btn-circle">
-                    <i class="fa fa-angle-down animated"></i>
-                </a>
-                 -->
-            </div>
-        </div>
-    </div>
-    </div>
-</header>
-<section id="nosotros" class="nosotros-section visible-md visible-lg">
-</section>
-<!-- Download Section -->
-<section id="food" class="food-section text-center visible-md visible-lg">
-    <slide-Arepas></slide-Arepas>
-    <detalles></detalles>
-    <div class="col-md-offset-5 col-md-2 text-center visible-xs">
-            <a class="btn btn-default-pedir" href="#menu" ng-click="isVisible=false"><span style="color: white">Pedir</span></a>
-        </div>
-    <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div ng-view>
+                  <!-- <a href="#food" class="bntFooter page-scroll btn btn-circle">
+                      <i class="fa fa-angle-down animated"></i>
+                  </a>
+                   -->
+              </div>
+          </div>
+      </div>
+      </div>
+  </header>
+  <section id="nosotros" class="nosotros-section visible-sm visible-md visible-lg">
+  </section>
+  <!-- Download Section -->
+  <section id="food" class="food-section text-center visible-sm visible-md visible-lg">
+      <slide-Arepas></slide-Arepas>
+      <detalles></detalles>
+      <div class="col-md-offset-5 col-md-2 text-center visible-xs">
+              <a class="btn btn-default-pedir" href="#menu" ng-click="isVisible=false"><span style="color: white">Pedir</span></a>
+          </div>
+      <div class="modal fade" id="myModalComprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div ng-view>
 
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="menuMobile" class="visible-xs" ng-if="!isVisible">
-    <div ng-view>
-        
-     </div>
-</section>
-<!-- About Section -->
-<!-- Contact Section -->
-<section id="contact" class="content-section" ng-controller="formCtrl">
-    <contacto></contacto>
-</section>
-<section class="copyRight-section">
-        <a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>
-        <span style="color: rgb(243, 236, 236);"> &copy; Todos los derechos reservados 2016</span>
-</section>
-<div class="modal fade" id="anotherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div ng-view>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section id="menuMobile" class="visible-xs" ng-if="!isVisible">
+      <div ng-view>
+          
+       </div>
+  </section>
+  <!-- About Section -->
+  <!-- Contact Section -->
+  <section id="contact" class="content-section" ng-controller="formCtrl">
+      <contacto></contacto>
+  </section>
+  <section class="copyRight-section">
+          <a style="text-decoration: underline;" target="blank" href="https://www.linkedin.com/in/mikjailsalazar">Mik+Vibe</a>
+          <span style="color: rgb(243, 236, 236);"> &copy; Todos los derechos reservados 2016</span>
+  </section>
+  <div class="modal fade" id="anotherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div ng-view>
 
-                </div>
-            </div>
-        </div>
-    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     <!-- inject:js -->
     <!-- endinject -->
     <script src="<?= secure_asset('js/lib.min.js')?>"></script>
