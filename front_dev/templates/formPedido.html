@@ -2,7 +2,7 @@
     <button type="button" class="close hidden-xs" data-dismiss="modal" aria-label="Close">&times;</button>
     <h3 class="modal-title">Datos</h3>
 </div>
-<div class="modal-body">
+<div class="modal-body"  ng-controller="formCtrl">
     <div class="row">
     <div class="col-md-12">
         <form id="formPedido" data-toggle="validator" ng-submit="registrarForm();" role="form">
@@ -14,18 +14,22 @@
                 <br>
                 <div class="col-md-3 form-group" ng-if="isOpen() == false">
                     <label for="inputName" class="control-label">Día</label>
-                    <select class="form-control" name="singleSelect" ng-model="scheduleDay" ng-options="days for days in days"  required>
+                    <select class="form-control" name="singleSelect" ng-model="daySelected.selection" ng-options="scheduleDay.day for scheduleDay in scheduleDays" required>
+                        <option value="">-- Dia --</option>
                     </select>
                 </div>
                 <div class="col-md-3 form-group" ng-if="isOpen() == false">
                             <label for="inputName" class="control-label">Hora</label>
-                            <select class="form-control" name="singleSelect" ng-model="scheduleHour" ng-options="i for i in ['19','20','21','22','23']"  required>
+                            <select class="form-control" name="singleSelect" ng-model="hourSelected.selection" ng-options="i for i in [19,20,21,22,23]"  required>
+                                    <option value="">-- Horas --</option>
                             </select>
+                           
                             <div class="help-block with-errors">19 a 23:45</div>
                 </div>
                 <div class="col-md-3 form-group" ng-if="isOpen() == false">
                         <label for="inputName" class="control-label">Min</label>
-                        <select class="form-control" name="singleSelect" ng-model="scheduleMin" ng-options="i for i in ['00','15','30','45']"  required>
+                        <select class="form-control" name="singleSelect" ng-model="minSelected.selection" ng-options="i for i in ['00','15','30','45']"  required>
+                                <option value="">-- Minutos --</option>
                         </select>
                 </div>
                 <div class="col-md-12 form-group">

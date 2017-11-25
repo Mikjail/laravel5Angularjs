@@ -13,19 +13,6 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
         tequenos: null,
         empanadas: null
     };
-    $scope.scheduleHour='19';
-    $scope.scheduleMin='00';
-
-    $scope.days= ['Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
-    var date = new Date();
-    console.log(date.getDay());
-    var day = date.getDay()-1;
-    $scope.days = $scope.days.splice(day,7-date.getDay());
-    if(day != 0){
-        $scope.days.unshift('Hoy');
-    }
-    $scope.scheduleDay= $scope.days[0];
-    console.log($scope.scheduleDay);
     $scope.productsType={};
     $scope.products={};
     $scope.pTypeSelected={"id": 1,
@@ -133,13 +120,33 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
 }
 
 function formCtrl($scope, $http, $location, API_URL) {
-  
+    $scope.hourSelected={ selection: ''};
+    $scope.minSelected={ selection: ''};
+    $scope.daySelected = { selection: {}};
+    $scope.scheduleDays= [
+        { day : 'Martes' },
+        { day: 'Miercoles' },
+        { day: 'Jueves' }, 
+        { day: 'Viernes'},
+        { day: 'Sabado'}, 
+        { day: 'Domingo'}];
+    var date = new Date();
+    // console.log(date.getDay());
+    var day = date.getDay()-1;
+    $scope.scheduleDays = $scope.scheduleDays.splice(day,7-date.getDay());
+    if(day != 0){
+        $scope.scheduleDays.unshift({ day: 'Hoy' });
+    }
+    // $scope.dia = $scope.scheduleDays[0];
+    // console.log( $scope.dia );
 
     $scope.registrarForm = function() {
         if($scope.comment == '' || $scope.comment == null || $scope.comment == undefined){
             $scope.comment="no comment";
         }
-        console.log($scope.productsBought())
+        // console.log($scope.scheduleHour);
+        // console.log(  $scope.dia.day + ' a las ' + $scope.scheduleHour +' : '+$scope.scheduleMin+'hs')
+        // console.log($scope.productsBought())
         $http({method: 'POST',
             url: API_URL+'contactUs', data:$.param({
             nombre: $scope.nombreForm,
@@ -155,7 +162,9 @@ function formCtrl($scope, $http, $location, API_URL) {
             productoPedido: $scope.productsBought(),
             productsType: $scope.productsType,
             total:$scope.promo(),
-            horario: $scope.scheduleDay + ' a las ' + $scope.scheduleHour +' : '+$scope.scheduleMin+'hs'
+            horario: $scope.daySelected.selection.day +
+             ' a las ' + $scope.hourSelected.selection +' : '+
+             $scope.minSelected.selection+'hs'
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
             $location.path("/finalOrder");
             $scope.nombreForm = "";
@@ -170,7 +179,6 @@ function formCtrl($scope, $http, $location, API_URL) {
             $scope.depto = "";
        
         }).error(function(response) {
-            console.log(response);
             alert('Hubo un error al intentar hacer el pedido, contactese por telefono');
         });
     }
@@ -202,7 +210,7 @@ function formCtrl($scope, $http, $location, API_URL) {
         }), headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function(response) {
             $('#anotherModal').modal('show');
             $location.path("/finalOrder");
-            console.log(response);
+            // console.log(response);
             $scope.nombreForm = "";
             $scope.apellidoForm = "";
             $scope.mailForm = "";
@@ -214,7 +222,7 @@ function formCtrl($scope, $http, $location, API_URL) {
             $scope.piso = "";
             $scope.depto = "";
         }).error(function(response) {
-            console.log(response);
+            // console.log(response);
             // alert('This is embarassing. An error has occured. Please check the log for details');
         });
     }
