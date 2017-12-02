@@ -85,21 +85,30 @@
   <header class="intro" ng-if="isVisible">
       <div class="intro-body">
           <div class="container">
-              <div class="row">
-                  <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-offset-3 col-xs-6">
-                      <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
-                  </div>
-              </div>
-              <div class="row">
-              
-                  <!-- <a href="#food" class="bntFooter page-scroll btn btn-circle">
-                      <i class="fa fa-angle-down animated"></i>
-                  </a>
-                   -->
-              </div>
+                 <div class="row spacer visible-xs">
+          
+                </div>
+                <div class="row">
+                <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 hidden-xs">
+                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 visible-xs">
+                    <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/logotipoHome.png " alt=" ">
+                </div>
+                </div>
+                <div class="row spacer visible-xs">
+
+                </div>
+                <div class="row">
+                <div class="col-xs-6 col-xs-offset-3 visible-xs">
+                    <a href="#menu" ng-click="orderNow()"> 
+                        <img src="img/icon/2.gif" class="lazy img-responsive btn-pideYa" data-original="img/botonPideYa.png " alt=" ">
+                    </a>
+                </div>
+                </div>
           </div>
       </div>
-      </div>
+    </div>
   </header>
   <section id="nosotros" class="nosotros-section visible-sm visible-md visible-lg">
   </section>
