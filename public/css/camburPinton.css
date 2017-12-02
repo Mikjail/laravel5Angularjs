@@ -132,9 +132,8 @@ a:focus {
   background-size: cover;
   background-color: black;
 }
-.intro .intro-body {
-  display: table-cell;
-  vertical-align: middle;
+.intro .spacer {
+  height: 10rem;
 }
 .intro .intro-body .intro-text {
   font-size: 18px;
@@ -155,12 +154,7 @@ a:focus {
   margin-bottom: -22%;
 }
 .intro .imgCambur {
-  margin-top: 30%;
-}
-@media (max-width: 470px) {
-  .intro .imgCambur {
-    margin-top: -77%;
-  }
+  margin-top: 50%;
 }
 .btn-circle {
   width: 45px;
