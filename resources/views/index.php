@@ -23,7 +23,7 @@
     <link rel="icon" href="<?= secure_asset('favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= secure_asset('favicon.ico') ?>">
     <link href="<?= secure_asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= secure_asset('css/camburPintonv3.0.min.css') ?>" rel="stylesheet">
+    <link href="<?= secure_asset('css/camburPintonv4.0.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -148,7 +148,7 @@
     <script src="<?= secure_asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
     <!-- Services -->
-     <script src="<?= secure_asset('js/camburPintonv3.0.js')?>"></script>
+     <script src="<?= secure_asset('js/camburPintonv4.0.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -205,7 +205,7 @@
                     lng: -58.4458
                 },
                 scrollwheel: false,
-                zoom: 13,
+                zoom: 14,
                 zoomControl: true,
                 disableDefaultUI: true
             });
@@ -288,11 +288,19 @@
                 geodesic: true,
                 strokeColor: '#f39200',
                 strokeOpacity: 1.0,
-                fillColor: '#35c72e',
+                fillColor: '#697069',
                 fillOpacity: 0.3,
                 strokeWeight: 2
             });
 
+            var myLatlng = new google.maps.LatLng(-34.571218, -58.448642);
+         
+            var iconBase ='http://maps.google.com/mapfiles/ms/micons/restaurant.png'
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                icon: iconBase
+            });
+            marker.setMap(map);
             rango.setMap(map);
         }
 
