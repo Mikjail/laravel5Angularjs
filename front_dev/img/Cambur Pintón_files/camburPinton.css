@@ -128,12 +128,22 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url(../img/backgroundHomePC.png) no-repeat center center;
-  background-size: cover;
-  background-color: black;
 }
-.intro .spacer {
-  height: 10rem;
+@media (min-width: 768px) {
+  .intro {
+    background: url(../img/backgroundHomePC.png) no-repeat center center;
+    background-size: cover;
+    background-color: black;
+  }
+}
+@media (max-width: 768px) {
+  .intro {
+    background: url(../img/backgroundHomeMobile.png) no-repeat center center;
+  }
+}
+.intro .intro-body {
+  display: table-cell;
+  vertical-align: middle;
 }
 .intro .intro-body .intro-text {
   font-size: 18px;
@@ -154,7 +164,12 @@ a:focus {
   margin-bottom: -22%;
 }
 .intro .imgCambur {
-  margin-top: 50%;
+  margin-top: 30%;
+}
+@media (max-width: 470px) {
+  .intro .imgCambur {
+    margin-top: -77%;
+  }
 }
 .btn-circle {
   width: 45px;

@@ -292,9 +292,17 @@
                 strokeWeight: 2
             });
 
+            var myLatlng = new google.maps.LatLng(-34.571218, -58.448642);
+         
+            var iconBase ='http://maps.google.com/mapfiles/ms/micons/restaurant.png'
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                icon: iconBase
+            });
+            marker.setMap(map);
             rango.setMap(map);
         }
-
+        
         function lazyLoadGoogleMap() {
             $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyC9qoUtPZFr24eqjQ0Lfhf4HXUMg_T85CU&callback=initMap")
                 .done(function (script, textStatus) {

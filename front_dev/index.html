@@ -59,7 +59,7 @@
                             <a class="visible-xs" href="#" ng-if="!isVisible" ng-click="isVisible=true; reloadPage()">Home</a>
                         </li>
                     <li>
-                        <a class="page-scroll visible-md visible-lg" href="#food" >Menú</a>
+                        <a class="page-scroll visible-sm visible-md visible-lg" href="#food" >Menú</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact" ng-if="isVisible">Contacto</a>
@@ -85,17 +85,26 @@
     <header class="intro" ng-if="isVisible">
         <div class="intro-body">
             <div class="container">
+                    <div class="row spacer visible-xs">
+                            
+                                            </div>
                 <div class="row">
-                    <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-offset-3 col-xs-6">
+                    <div class="imgCambur col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 hidden-xs">
                         <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/ImagotipoBlanco.png " alt=" ">
                     </div>
+                    <div class="col-xs-6 col-xs-offset-3 visible-xs">
+                        <img src="img/icon/2.gif" class="lazy img-responsive" data-original="img/logotipoHome.png " alt=" ">
+                    </div>
+                </div>
+                <div class="row spacer visible-xs">
+
                 </div>
                 <div class="row">
-                
-                    <!-- <a href="#food" class="bntFooter page-scroll btn btn-circle">
-                        <i class="fa fa-angle-down animated"></i>
-                    </a>
-                     -->
+                    <div class="col-xs-6 col-xs-offset-3 visible-xs">
+                       <a href="#menu" ng-click="orderNow()"> 
+                            <img src="img/icon/2.gif" class="lazy img-responsive btn-pideYa" data-original="img/botonPideYa.png " alt=" ">
+                       </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -302,6 +311,14 @@
                 strokeWeight: 2
             });
 
+            var myLatlng = new google.maps.LatLng(-34.571218, -58.448642);
+         
+            var iconBase ='http://maps.google.com/mapfiles/ms/micons/restaurant.png'
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                icon: iconBase
+            });
+            marker.setMap(map);
             rango.setMap(map);
         }
 

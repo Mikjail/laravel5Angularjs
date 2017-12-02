@@ -15,8 +15,6 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
     };
     $scope.productsType={};
     $scope.products={};
-    $scope.show = [];
-    console.log( $scope.show );
     $scope.pTypeSelected={"id": 1,
     "name": "arepaMaiz",
     "description": "Arepas de Maiz"};
@@ -27,12 +25,7 @@ function productosCtrl($scope, ProductsService,ProductsTypeService, $window) {
                 $scope.productsType = data;
        
         $scope.totalBought= 0;
-        
-        $scope.showFullScreen = function(number){
-            $scope.show[number] = true;
 
-        }
-        
         $scope.productTypeSelected = function(productType){
             $scope.pTypeSelected = productType;
         }
