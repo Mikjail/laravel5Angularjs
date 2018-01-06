@@ -6,7 +6,7 @@ var gModule = require("./gulpModules.js")();
 var distConfig = require('./distConfig.js')();
 var libConfig = require("./gulpconfig.js")();
 
-var PRODVERSION = "v5.0";
+var PRODVERSION = "v6.0";
 console.log("TRBAJANDO SOBRE VERSION:" + PRODVERSION);
 //////////////////////////////////////////////////////
 //                    HTML-TEMPLATE-CACHE           //
