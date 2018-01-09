@@ -23,7 +23,7 @@
     <link rel="icon" href="<?= secure_asset('favicon.ico') ?>">
     <link rel="shortcut icon" href="<?= secure_asset('favicon.ico') ?>">
     <link href="<?= secure_asset('css/lib.css') ?>" rel="stylesheet">
-    <link href="<?= secure_asset('css/camburPintonv6.0.min.css') ?>" rel="stylesheet">
+    <link href="<?= secure_asset('css/camburPintonv7.0.min.css') ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -157,7 +157,7 @@
     <script src="<?= secure_asset('js/lib.min.js')?>"></script>
     <!-- jQuery -->
     <!-- Services -->
-     <script src="<?= secure_asset('js/camburPintonv6.0.js')?>"></script>
+     <script src="<?= secure_asset('js/camburPintonv7.0.js')?>"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

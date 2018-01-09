@@ -44,5 +44,5 @@
 <div class="modal-footer" ng-if="isOpen() == false">
     <h1 class="text-center">{{totalCompra()| currency}} </h1>
     <a href="#menu" class="btn btn-default pull-left" style="border:1px solid white;" ng-if="totalCompra() >= 0">Menu</a>
-    <a href="#fueraHorario" class="btn btn-default" style="border:1px solid white;" ng-if="promo() >= 150">Continuar</a>
+    <a href="#fueraHorario" class="btn btn-default col-xs-6 pull-right" style="border:1px solid white;" ng-if="promo() >= 150">Continuar</a>
 </div>
